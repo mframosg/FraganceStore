@@ -7,9 +7,11 @@
         "watch-poll": "mix watch -- --watch-options-poll=1000",
         "hot": "mix watch --hot",
         "prod": "npm run production",
-        "production": "mix --production"
+        "production": "mix --production",
+        "prettier": "prettier --write resources/ --write app/ --write database/"
     },
     "devDependencies": {
+        "@prettier/plugin-php": "^0.17.5",
         "axios": "^0.21",
         "bootstrap": "^4.0.0",
         "jquery": "^3.2",
@@ -17,6 +19,8 @@
         "lodash": "^4.17.19",
         "popper.js": "^1.12",
         "postcss": "^8.1.14",
+        "prettier": "^2.4.1",
+        "prettier-plugin-blade": "^0.0.5",
         "sass": "^1.15.2",
         "sass-loader": "^8.0.0"
     }
