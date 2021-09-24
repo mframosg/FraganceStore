@@ -17,8 +17,20 @@ class FraganceController extends Controller
     public function add(Request $request)
     {
         Fragance::validate($request);
-        Fragance::create($request->only(['title', 'category', 'description', 'price']));
 
+        $image = $request->file('image');
+        $destinationPath = 'img/fragance/';
+        $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+        $image->move($destinationPath, $profileImage);
+
+        Fragance::create([
+            'title' => $request->input('title'), 
+            'image' => $profileImage, 
+            'category' => $request->input('category'), 
+            'description' => $request->input('description'),  
+            'price' => $request->input('price'),
+        ]);
+        
         return redirect()->route('admin.home');
     }
 
