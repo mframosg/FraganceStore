@@ -22,13 +22,13 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 /* Admin routes*/
 Route::get('/admin/home', 'App\Http\Controllers\FraganceController@list')->name('admin.home');
 
-Route::get('/create', 'App\Http\Controllers\FraganceController@addIndex')->name('fragance.index');
+Route::get('/admin/create', 'App\Http\Controllers\FraganceController@addIndex')->name('fragance.index');
 
-Route::post('/create', 'App\Http\Controllers\FraganceController@add')->name("fragance.add");
+Route::post('admin/create', 'App\Http\Controllers\FraganceController@add')->name("fragance.add");
 
-Route::get('/show/{id}', 'App\Http\Controllers\FraganceController@show')->name("fragance.show");
+Route::get('admin/show/{id}', 'App\Http\Controllers\FraganceController@show')->name("fragance.show");
 
-Route::delete('/show/{id}', 'App\Http\Controllers\FraganceController@delete')->name("fragance.delete");
+Route::delete('admin/show/{id}', 'App\Http\Controllers\FraganceController@delete')->name("fragance.delete");
 
 
 
