@@ -10,13 +10,14 @@ class Fragance extends Model
 {
     use HasFactory;
 
-    //attributes id, title, category, description, price, created_at, updated_at
-    protected $fillable = ['title', 'category', 'description', 'price'];
+    //attributes id, image, title, category, description, price, created_at, updated_at
+    protected $fillable = ['title', 'image', 'category', 'description', 'price'];
 
     public static function validate(Request $request)
     {
         $request->validate([
             "title" => "required",
+            "image" => "required|image|mimes:jpeg,png,jpg,gif,svg|max:2048",
             "category" => "required",
             "description" => "required",
             "price" => "required|numeric|gt:0"

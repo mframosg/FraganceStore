@@ -16,6 +16,7 @@ class CreateFragancesTable extends Migration
         Schema::create('fragances', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('image');
             $table->string('category');
             $table->string('description');
             $table->double('price');
