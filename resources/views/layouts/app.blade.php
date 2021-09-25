@@ -20,7 +20,7 @@
   </head>
   <body id="page-top">
     <!-- Navigation-->
-    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+    <nav class="navbar navbar-expand-lg bg-dark text-uppercase fixed-top" id="mainNav">
       <div class="container">
         <a class="navbar-brand js-scroll-trigger" href="{{ route('home.index') }}">Home</a>
         <button
@@ -61,10 +61,10 @@
       </div>
     </nav>
     <!-- Masthead-->
-    <header class="masthead bg-primary text-white text-center">
+    <header class="masthead bg-info text-white text-center">
       <div class="container d-flex align-items-center flex-column">
         <!-- Masthead Heading-->
-        <h1 class="masthead-heading text-uppercase mb-0">Home</h1>
+        <h1 class="masthead-heading text-uppercase mb-0">Lorem</h1>
         <!-- Icon Divider-->
         <div class="divider-custom divider-light">
           <div class="divider-custom-line"></div>
@@ -74,51 +74,44 @@
           <div class="divider-custom-line"></div>
         </div>
         <!-- Masthead Subheading-->
-        <p class="masthead-subheading font-weight-light mb-0">Website - Home</p>
+        <p class="masthead-subheading font-weight-light mb-0">lorem - lorem</p>
       </div>
     </header>
 
     @yield('content')
 
     <!-- Footer-->
-    <footer class="footer text-center">
+    <footer class="bg-dark footer text-center">
       <div class="container">
         <div class="row">
-          <!-- Footer Location-->
-          <div class="col-lg-4 mb-5 mb-lg-0">
-            <h4 class="text-uppercase mb-4">Location</h4>
-            <p class="lead mb-0">
-              2215 John Daniel Drive
-              <br />
-              Clark, MO 65243
-            </p>
-          </div>
           <!-- Footer Social Icons-->
-          <div class="col-lg-4 mb-5 mb-lg-0">
-            <h4 class="text-uppercase mb-4">Around the Web</h4>
+          <div class="col-6 mt-3">
+            <h4 class="text-uppercase mb-4">Follow us on</h4>
             <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f"></i></a>
             <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-twitter"></i></a>
-            <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-linkedin-in"></i></a>
-            <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-dribbble"></i></a>
+            <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-github"></i></a>
           </div>
-          <!-- Footer About Text-->
-          <div class="col-lg-4">
-            <h4 class="text-uppercase mb-4">About Freelancer</h4>
-            <p class="lead mb-0">
-              Freelance is a free to use, MIT licensed Bootstrap theme created by
-              <a href="http://startbootstrap.com">Start Bootstrap</a>
-              .
-            </p>
+          <!-- About Section Content-->
+          <div class="row col-6 ">
+            <h4 class="col-12 mt-3" >Lorem ipsum dolor sit amet.</h4>
+            <div class="col mt-4 ml-auto">
+              <p class="lead">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, eum?
+              </p>
+            </div>
+            <div class="col mt-4 mr-auto">
+              <p class="lead">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, consequatur!
+              </p>
+            </div>
+          </div>
+          <!-- Copyright Section-->
+          <div class="bg-dark col-12 mt-3 border-top copyright py-4 text-center text-white">
+              <div class="mt-4"> <small> Copyright &copy; Conception Fragance {{ now()->year }}</small></div>
           </div>
         </div>
       </div>
     </footer>
-    <!-- Copyright Section-->
-    <div class="copyright py-4 text-center text-white">
-      <div class="container">
-        <small>Copyright © Your Website 2020</small>
-      </div>
-    </div>
     <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->
     <div class="scroll-to-top d-lg-none position-fixed">
       <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top"><i class="fa fa-chevron-up"></i></a>
