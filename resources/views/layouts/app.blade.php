@@ -77,13 +77,13 @@
       </div>
     </header>
 
-    {{-- Main content --}}
+    <!-- Main content -->
     <div class="container">
       <div class="row">
         @yield('content')
       </div>
     </div>
-    
+
     <!-- Footer-->
     <footer class="bg-dark footer text-center">
       <div class="container">
