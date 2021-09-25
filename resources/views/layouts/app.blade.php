@@ -20,7 +20,7 @@
   </head>
   <body id="page-top">
     <!-- Navigation-->
-    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+    <nav class="navbar navbar-expand-lg bg-dark text-uppercase fixed-top" id="mainNav">
       <div class="container">
         <a class="navbar-brand js-scroll-trigger" href="{{ route('home.index') }}">Home</a>
         <button
@@ -61,10 +61,10 @@
       </div>
     </nav>
     <!-- Masthead-->
-    <header class="masthead bg-primary text-white text-center">
+    <header class="masthead bg-info text-white text-center">
       <div class="container d-flex align-items-center flex-column">
         <!-- Masthead Heading-->
-        <h1 class="masthead-heading text-uppercase mb-0">Home</h1>
+        <h1 class="masthead-heading text-uppercase mb-0">Lorem</h1>
         <!-- Icon Divider-->
         <div class="divider-custom divider-light">
           <div class="divider-custom-line"></div>
@@ -74,7 +74,7 @@
           <div class="divider-custom-line"></div>
         </div>
         <!-- Masthead Subheading-->
-        <p class="masthead-subheading font-weight-light mb-0">Website - Home</p>
+        <p class="masthead-subheading font-weight-light mb-0">lorem - lorem</p>
       </div>
     </header>
 
