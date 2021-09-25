@@ -15,12 +15,11 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="{{ asset('/css/styles.css') }}" rel="stylesheet" />
-    }
     <link href="{{ asset('/css/custom-styles.css') }}" rel="stylesheet" />
   </head>
   <body id="page-top">
     <!-- Navigation-->
-    <nav class="navbar navbar-expand-lg bg-dark text-uppercase fixed-top" id="mainNav">
+    <nav class="navbar mt-0 navbar-expand-lg bg-dark text-uppercase" id="mainNav">
       <div class="container">
         <a class="navbar-brand js-scroll-trigger" href="{{ route('home.index') }}">Home</a>
         <button
@@ -60,26 +59,31 @@
         </div>
       </div>
     </nav>
-    <!-- Masthead-->
-    <header class="masthead bg-info text-white text-center">
+    <!-- Jumbotron-->
+    <header class=" jumbotron jumbotron-fluid bg-ligth text-dark text-center">
       <div class="container d-flex align-items-center flex-column">
-        <!-- Masthead Heading-->
+        <!-- Jumbotron Heading-->
         <h1 class="masthead-heading text-uppercase mb-0">Lorem</h1>
         <!-- Icon Divider-->
-        <div class="divider-custom divider-light">
+        <div class="divider-custom divider-dark">
           <div class="divider-custom-line"></div>
           <div class="divider-custom-icon">
-            <i class="fas fa-star"></i>
+            <i class="fas fa-star text-dark "></i>
           </div>
           <div class="divider-custom-line"></div>
         </div>
-        <!-- Masthead Subheading-->
-        <p class="masthead-subheading font-weight-light mb-0">lorem - lorem</p>
+        <!-- Jumbotron Subheading-->
+        <p class="masthead-subheading font-weight-bold mb-0">lorem - lorem</p>
       </div>
     </header>
 
-    @yield('content')
-
+    {{-- Main content --}}
+    <div class="container">
+      <div class="row">
+        @yield('content')
+      </div>
+    </div>
+    
     <!-- Footer-->
     <footer class="bg-dark footer text-center">
       <div class="container">
