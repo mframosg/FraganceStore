@@ -63,7 +63,7 @@
     <header class=" jumbotron jumbotron-fluid bg-ligth text-dark text-center">
       <div class="container d-flex align-items-center flex-column">
         <!-- Jumbotron Heading-->
-        <h1 class="masthead-heading text-uppercase mb-0">Lorem</h1>
+        <h1 class="masthead-heading text-uppercase mb-0">@yield('user','Guest')</h1>
         <!-- Icon Divider-->
         <div class="divider-custom divider-dark">
           <div class="divider-custom-line"></div>
@@ -73,16 +73,15 @@
           <div class="divider-custom-line"></div>
         </div>
         <!-- Jumbotron Subheading-->
-        <p class="masthead-subheading font-weight-bold mb-0">lorem - lorem</p>
+        <p class="masthead-subheading font-weight-bolder mb-0">Welcome</p>
       </div>
     </header>
 
     <!-- Main content -->
     <div class="container">
-      <div class="row">
         @yield('content')
-      </div>
     </div>
+    
 
     <!-- Footer-->
     <footer class="bg-dark footer text-center">

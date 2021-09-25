@@ -1,35 +1,30 @@
 @extends('layouts.app') @section('content')
-    <h1>Bienvenido usuario {{ auth()->user()->getName() }}</h1>
-    <div class="container">
-        <table class="table table-bordered">
-            <thead class="thead-dark">
-                <tr>
-                    <th scope="col">Title</th>
-                    <th scope="col">Image</th>
-                    <th scope="col">Category</th>
-                    <th scope="col">Description</th>
-                    <th scope="col">Price</th>
-                </tr>
-            </thead>
-            <tbody>
+@section('user',auth()->user()->getName())
+    <h2 class=" text-center col-12">Available fragrances list</h2>
+    @foreach ($fragances as $fragance)
+        <div class="card-group">
+            <div class="card">
 
-                @foreach ($fragances as $fragance)
-                    <tr>
-                        <td><a style="text-decoration: none" href="{{ route('fragance.show', $fragance->getId()) }}">
-                                {{ $fragance->getTitle() }}</a></td>
-                        <td><img src="/img/fragance/{{ $fragance->image }}" width="100" height="100"></td>
-                        <td>{{ $fragance->getCategory() }}</td>
-                        <td>{{ $fragance->getDescription() }}</td>
-                        <td>{{ $fragance->getPrice() }}</td>
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
+                <img src="{{ asset("/img/fragance/$fragance->image") }}" class="d-block col-8" alt="not found">
 
-        <div class="text-center">
-            <a href="{{ route('fragance.index') }}" class="btn btn-primary">
-                Agregar
-            </a>
+            <div class="card-body">
+                <h5 class="card-title"><a style="text-decoration: none"
+                        href="{{ route('fragance.show', $fragance->getId()) }}">
+                        {{ $fragance->getTitle() }}</a></h5>
+                <p class="card-text">{{ $fragance->getDescription() }}</p>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">{{ $fragance->getCategory() }}</small>
+                <small class="text-muted">{{ $fragance->getPrice() }}</small>
+            </div>
         </div>
+        </div>
+
+    @endforeach
+
+    <div class="text-center">
+        <a href="{{ route('fragance.index') }}" class="btn btn-primary">
+            Agregar
+        </a>
     </div>
 @endsection
