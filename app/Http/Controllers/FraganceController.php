@@ -59,4 +59,28 @@ class FraganceController extends Controller
 
     return redirect()->route("admin.home");
   }
+
+  public function edit($id, Request $request)
+  {
+
+    $request->validate([
+      "title" => "required",
+      "category" => "required",
+      "description" => "required",
+      "price" => "required|numeric|gt:0",
+    ]);
+
+    $fragance = Fragance::findOrFail($id);
+
+    $fragance->fill([
+      "title" => $request->input("title"),
+      "category" => $request->input("category"),
+      "description" => $request->input("description"),
+      "price" => $request->input("price"),
+    ]);
+
+    $fragance->save();
+
+    return redirect()->route("admin.home");
+  }
 }
