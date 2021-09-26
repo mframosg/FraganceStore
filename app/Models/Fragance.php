@@ -44,6 +44,16 @@ class Fragance extends Model
     $this->attributes["title"] = $title;
   }
 
+  public function getImage()
+  {
+    return $this->attributes["image"];
+  }
+
+  public function setImage($image)
+  {
+    $this->attributes["image"] = $image;
+  }
+
   public function getCategory()
   {
     return $this->attributes["category"];

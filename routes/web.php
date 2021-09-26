@@ -30,6 +30,8 @@ Route::get('admin/show/{id}', 'App\Http\Controllers\FraganceController@show')->n
 
 Route::delete('admin/show/{id}', 'App\Http\Controllers\FraganceController@delete')->name("fragance.delete");
 
+Route::put('admin/show/{id}', 'App\Http\Controllers\FraganceController@edit')->name("fragance.edit");
+
 
 
 

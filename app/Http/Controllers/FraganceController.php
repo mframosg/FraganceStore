@@ -59,4 +59,35 @@ class FraganceController extends Controller
 
     return redirect()->route("admin.home");
   }
+
+  public function edit($id, Request $request)
+  {
+
+    $request->validate([
+      "title" => "required",
+      //"image" => "required|image|mimes:jpeg,png,jpg,gif,svg|max:2048",
+      "category" => "required",
+      "description" => "required",
+      "price" => "required|numeric|gt:0",
+    ]);
+
+    $fragance = Fragance::findOrFail($id);
+
+    //$image = $request->file("image");
+    //$destinationPath = "img/fragance/";
+    //$profileImage = date("YmdHis") . "." . $image->getClientOriginalExtension();
+    //$image->move($destinationPath, $profileImage);
+
+    $fragance->fill([
+      "title" => $request->input("title"),
+      //"image" => $profileImage,
+      "category" => $request->input("category"),
+      "description" => $request->input("description"),
+      "price" => $request->input("price"),
+    ]);
+
+    $fragance->save();
+
+    return redirect()->route("admin.home");
+  }
 }
