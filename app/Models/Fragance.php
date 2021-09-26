@@ -10,8 +10,8 @@ class Fragance extends Model
 {
   use HasFactory;
 
-  //attributes id, image, title, category, description, price, created_at, updated_at
-  protected $fillable = ["title", "image", "category", "description", "price"];
+  //attributes id, image, title, category, description, price, user_id created_at, updated_at
+  protected $fillable = ["title", "image", "category", "description", "price", "user_id"];
 
   public static function validate(Request $request)
   {
@@ -82,5 +82,21 @@ class Fragance extends Model
   public function setPrice($price)
   {
     $this->attributes["price"] = $price;
+  }
+
+  public function getUser_id()
+  {
+    return $this->attributes["user_id"];
+  }
+
+  public function setUser_id($user_id)
+  {
+    $this->attributes["user_id"] = $user_id;
+  }
+
+  //Relations
+
+  public function user(){
+    return $this->belongsTo(User::class);
   }
 }

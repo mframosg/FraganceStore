@@ -74,4 +74,10 @@ class User extends Authenticatable
   {
     $this->attributes["email"] = $email;
   }
+
+  //Relations
+
+  public function fragances(){
+    return $this->hasMany(Fragance::class);
+  }
 }
