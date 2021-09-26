@@ -25,7 +25,7 @@
 
       <br />
       <div class="text-center">
-        <button type="submit" class="btn btn-primary btn-block">Agregar</button>
+        <button type="submit" class="btn-lg btn-info">Add product</button>
       </div>
     </div>
   </form>
