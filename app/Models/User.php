@@ -37,41 +37,41 @@ class User extends Authenticatable
 
   public function getId()
   {
-    return $this->attributes['id'];
+    return $this->attributes["id"];
   }
 
   public function setId($id)
   {
-    $this->attributes['id'] = $id;
+    $this->attributes["id"] = $id;
   }
 
   public function getAdmin()
   {
-    return $this->attributes['admin'];
+    return $this->attributes["admin"];
   }
 
   public function setAdmin($admin)
   {
-    $this->attributes['admin'] = $admin;
+    $this->attributes["admin"] = $admin;
   }
 
   public function getName()
   {
-    return $this->attributes['name'];
+    return $this->attributes["name"];
   }
 
   public function setName($name)
   {
-    $this->attributes['name'] = $name;
+    $this->attributes["name"] = $name;
   }
 
   public function getEmail()
   {
-    return $this->attributes['email'];
+    return $this->attributes["email"];
   }
 
   public function setEmail($email)
   {
-    $this->attributes['email'] = $email;
+    $this->attributes["email"] = $email;
   }
 }

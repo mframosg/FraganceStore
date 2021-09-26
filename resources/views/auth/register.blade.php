@@ -84,17 +84,10 @@
               <label for="admin" class="col-md-4 col-form-label text-md-right">{{ __("Admin") }}</label>
 
               <div class="col-md-6">
-                <select
-                  id="admin"
-                  type="text"
-                  class="form-control"
-                  name="admin"
-                  required
-                  autocomplete="No"
-                  autofocus >
+                <select id="admin" type="text" class="form-control" name="admin" required autocomplete="No" autofocus>
                   <option value="No">No</option>
                   <option value="Yes">Yes</option>
-                </select>  
+                </select>
               </div>
             </div>
 

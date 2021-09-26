@@ -60,7 +60,7 @@
       </div>
     </nav>
     <!-- Jumbotron-->
-    <header class=" jumbotron jumbotron-fluid bg-ligth text-dark text-center">
+    <header class="jumbotron jumbotron-fluid bg-ligth text-dark text-center">
       <div class="container d-flex align-items-center flex-column">
         <!-- Jumbotron Heading-->
         <h1 class="masthead-heading text-uppercase mb-0">@yield('user','Guest')</h1>
@@ -68,7 +68,7 @@
         <div class="divider-custom divider-dark">
           <div class="divider-custom-line"></div>
           <div class="divider-custom-icon">
-            <i class="fas fa-star text-dark "></i>
+            <i class="fas fa-star text-dark"></i>
           </div>
           <div class="divider-custom-line"></div>
         </div>
@@ -78,10 +78,7 @@
     </header>
 
     <!-- Main content -->
-    <div class="container">
-        @yield('content')
-    </div>
-    
+    <div class="container">@yield('content')</div>
 
     <!-- Footer-->
     <footer class="bg-dark footer text-center">
@@ -95,22 +92,20 @@
             <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-github"></i></a>
           </div>
           <!-- About Section Content-->
-          <div class="row col-6 ">
-            <h4 class="col-12 mt-3" >Lorem ipsum dolor sit amet.</h4>
+          <div class="row col-6">
+            <h4 class="col-12 mt-3">Lorem ipsum dolor sit amet.</h4>
             <div class="col mt-4 ml-auto">
-              <p class="lead">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, eum?
-              </p>
+              <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, eum?</p>
             </div>
             <div class="col mt-4 mr-auto">
-              <p class="lead">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, consequatur!
-              </p>
+              <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, consequatur!</p>
             </div>
           </div>
           <!-- Copyright Section-->
           <div class="bg-dark col-12 mt-3 border-top copyright py-4 text-center text-white">
-              <div class="mt-4"> <small> Copyright &copy; Conception Fragance {{ now()->year }}</small></div>
+            <div class="mt-4">
+              <small> Copyright &copy; Conception Fragance {{ now()->year }}</small>
+            </div>
           </div>
         </div>
       </div>
