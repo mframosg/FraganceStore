@@ -31,23 +31,30 @@
                                 <p class="mb-5">
                                     {{ $fragance->getPrice() }}
                                 </p>
-                                @if(Auth::check())
-                                  <form action="" method="post">
-                                    <textarea name="comment" id="" cols="30" rows="10"></textarea>
-                                    <select name="stars">
-                                      <option value="1">1</option>
-                                      <option value="2">2</option>
-                                      <option value="3">3</option>
-                                      <option value="4">4</option>
-                                      <option value="5"selected>5</option>
-                                    </select>
-                                    <button type="submit">Add review</button>
-                                  </form>
-                                @endif
-                                {{-- @foreach($reviews as $review)
-                                  <p>$review->getComment()</p> 
-                                @endforeach --}}
-                                
+                                <button class="btn btn-primary" data-dismiss="modal">
+                                    <a href="{{ route("review.index", $fragance->getId()) }}">
+                                      
+                                      Your Reviews
+                                    </a>
+                                  </button>
+                                  <br>
+                                  <br>
+                                  <h2>Reviews</h2>
+                                  <div class="card-columns">   
+                                    @foreach ($reviews->reverse() as $review)
+                                    <div class="card">
+                                      <div class="card-body">
+                                        <h5 class="card-title">
+                                          <a style="text-decoration: none" href="{{ route('review.show', [$fragance->getId(), $review->getId()]) }}"> {{ $review->getComment() }}</a>
+                                        </h5>
+                                      </div>
+                                      <div class="card-footer">
+                                        <small class="text-muted">{{ $review->getStarts() }}</small>
+                                      </div>
+                                    </div>
+                                    @endforeach
+                                  </div>
+                                <br>
                                 <button class="btn btn-primary" data-dismiss="modal">
                                   <a href="{{ route("home.index") }}">
                                     <i class="fas fa-times fa-fw"></i>

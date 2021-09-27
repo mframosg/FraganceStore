@@ -10,7 +10,7 @@ class Fragance extends Model
 {
   use HasFactory;
 
-  //attributes id, image, title, category, description, price, user_id created_at, updated_at
+  //attributes id, image, title, category, description, price, user_id, created_at, updated_at
   protected $fillable = ["title", "image", "category", "description", "price", "user_id"];
 
   public static function validate(Request $request)
@@ -98,5 +98,9 @@ class Fragance extends Model
 
   public function user(){
     return $this->belongsTo(User::class);
+  }
+
+  public function comments(){
+    return $this->hasMany(Comment::class);
   }
 }

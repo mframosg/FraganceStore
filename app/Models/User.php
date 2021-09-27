@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Egulias\EmailValidator\Warning\Comment;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -79,5 +80,9 @@ class User extends Authenticatable
 
   public function fragances(){
     return $this->hasMany(Fragance::class);
+  }
+
+  public function comments(){
+    return $this->hasMany(Comment::class);
   }
 }
