@@ -44,5 +44,5 @@
                 <button type="submit" class="btn btn-danger">Borrar</button>
             </form>
         </div>
-    @endsection
-</div>
+    </div>
+@endsection

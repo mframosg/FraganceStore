@@ -3,6 +3,7 @@
 
 <div class="card-columns">
   @foreach ($fragances as $fragance)
+  @if($fragance->getUser_id() == auth()->user()->getId())
   <div class="card">
     <img src="{{ asset("/img/fragance/$fragance->image") }}" class="card-img-top" alt="not found">
 
@@ -17,6 +18,7 @@
       <small class="text-muted">{{ $fragance->getPrice() }}</small>
     </div>
   </div>
+  @endif
   @endforeach
 </div>
 

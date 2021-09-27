@@ -29,6 +29,7 @@ class FraganceController extends Controller
       "category" => $request->input("category"),
       "description" => $request->input("description"),
       "price" => $request->input("price"),
+      "user_id" => auth()->user()->getId(),
     ]);
 
     return redirect()->route("admin.home");
