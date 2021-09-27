@@ -42,7 +42,7 @@ class FraganceController extends Controller
 
   public function list()
   {
-    $fragances = Fragance::all();
+    $fragances = Fragance::where('user_id', auth()->user()->getId())->get();
 
     return view("admin.admin-index")->with("fragances", $fragances);
   }
