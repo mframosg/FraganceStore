@@ -19,18 +19,20 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('home/info/{id}', 'App\Http\Controllers\HomeController@info')->name("fragance.info");
+
 /* Admin routes*/
-Route::get('/admin/home', 'App\Http\Controllers\FraganceController@list')->name('admin.home');
+Route::get('/admin/home', 'App\Http\Controllers\FraganceController@list')->name('admin.home')->middleware('auth');
 
-Route::get('/admin/create', 'App\Http\Controllers\FraganceController@addIndex')->name('fragance.index');
+Route::get('/admin/create', 'App\Http\Controllers\FraganceController@addIndex')->name('fragance.index')->middleware('auth');
 
-Route::post('admin/create', 'App\Http\Controllers\FraganceController@add')->name("fragance.add");
+Route::post('admin/create', 'App\Http\Controllers\FraganceController@add')->name("fragance.add")->middleware('auth');
 
-Route::get('admin/show/{id}', 'App\Http\Controllers\FraganceController@show')->name("fragance.show");
+Route::get('admin/show/{id}', 'App\Http\Controllers\FraganceController@show')->name("fragance.show")->middleware('auth');
 
-Route::delete('admin/show/{id}', 'App\Http\Controllers\FraganceController@delete')->name("fragance.delete");
+Route::delete('admin/show/{id}', 'App\Http\Controllers\FraganceController@delete')->name("fragance.delete")->middleware('auth');
 
-Route::put('admin/show/{id}', 'App\Http\Controllers\FraganceController@edit')->name("fragance.edit");
+Route::put('admin/show/{id}', 'App\Http\Controllers\FraganceController@edit')->name("fragance.edit")->middleware('auth');
 
 
 
