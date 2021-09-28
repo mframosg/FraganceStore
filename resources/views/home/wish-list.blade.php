@@ -7,6 +7,8 @@
       <!-- Portfolio Grid Items-->
       <div class="row">
         <!-- Portfolio Item 1-->
+
+        {{-- Implementar desde el controlador que se manden las imagenes --}}
         @foreach ($fragances as $fragance)
         <div class="col-md-6 col-lg-4 mb-5">
           <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
@@ -21,7 +23,6 @@
             <img class="img-fluid" src="{{ asset("/img/fragance/$fragance->image") }}" alt="not founded" />
           </div>
           <div class="row">
-            <a href="#" class=" btn btn-outline-primary btn-block mt-2 col-4">Wish list <i class="fa 	far fas fa-heart"></i></a>
             <form action="" method="post" class="row col-8" >
               <a href="#" class=" btn btn-outline-primary btn-block col-8 mt-2">Add<i class="fa 	fas fa-shopping-cart"></i></a>
               <input type="number" class="btn btn-outline-primary btn-block col-4 " value="1" min="1" max="99" />

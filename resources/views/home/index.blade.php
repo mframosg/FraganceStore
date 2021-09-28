@@ -21,9 +21,9 @@
           <img class="img-fluid" src="{{ asset("/img/fragance/$fragance->image") }}" alt="not founded" />
         </div>
         <div class="row">
-          <a href="#" class=" btn btn-outline-primary btn-block mt-2 col-4">Wish list <i class="fa 	far fas fa-heart"></i></a>
+          <a href="{{ route("home.wish") }}" class=" btn btn-outline-primary btn-block mt-2 col-4">Wish list <i class="fa 	far fas fa-heart"></i></a>
           <form action="" method="post" class="row col-8" >
-            <a href="#" class=" btn btn-outline-primary btn-block col-8 mt-2">Add<i class="fa 	fas fa-shopping-cart"></i></a>
+            <a href="{{ route("car.buy") }}" class=" btn btn-outline-primary btn-block col-8 mt-2">Add<i class="fa 	fas fa-shopping-cart"></i></a>
             <input type="number" class="btn btn-outline-primary btn-block col-4 " value="1" min="1" max="99" />
           </form> 
         </div>
