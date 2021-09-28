@@ -43,33 +43,14 @@
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('register') }}">{{ __("Register") }}</a>
             </li>
             @else
-
-            <div class="container">
-              <div class="row">    
-               <div class="col-xs-8 col-xs-offset-2">
-                <div class="input-group ">
-                  <div class="input-group-prepend">
-                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</button>
-                    <div class="dropdown-menu">
-                      <a class="dropdown-item" href="#">All</a>
-                      <div role="separator" class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Male</a>
-                      <a class="dropdown-item" href="#">Female</a>
-                      <a class="dropdown-item" href="#">Sweet</a>
-                      <a class="dropdown-item" href="#">Citric</a>
-                      <a class="dropdown-item" href="#">Refreshing</a>
-                    </div>
-                  </div>
-                 <input type="text" class="form-control rounded-0" name="x" placeholder="Search">
-                  <div class="input-group-append">
-                     <button class="btn btn-primary rounded-rigth" type="button">
-                        <i class="fas fa-search"></i>
-                     </button>
-                  </div>
-               </div>
-              </div>
-            </div>
-          </div>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a
+                class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                href="{{ route('solds') }}"
+                >Solds</a
+              >
+            </li>
+            
 
             @if(auth()->user()->getAdmin() == 'Yes')
               <li class="nav-item mx-0 mx-lg-1">
