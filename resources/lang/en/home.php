@@ -28,6 +28,7 @@ return [
   "add-wish"=>"Add Wish",
   "delete-wish"=>"Delete Wish",
   //*app view*//
+  "solds"=>"Solds",
   "home"=>"Home",
   "categories"=>"Categories",
   "all" => "All",
@@ -50,6 +51,10 @@ return [
   "category"=>"Category",
   "description"=>"Description",
   "price"=>"Price",
+  //*seach view*//
+  "fragances"=>"Fragances",
+  //*sold view*//
+  "sold-fragances"=>"Sold Fragances"
 
 
 

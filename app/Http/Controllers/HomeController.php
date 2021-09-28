@@ -16,6 +16,14 @@ class HomeController extends Controller
     return view("home.index")->with("fragances", $fragances);
   }
 
+  public function solds()
+  {
+    $fragances = Fragance::all();
+    $items = Item::all();
+
+    return view("home.sold")->with("fragances", $fragances)->with("items", $items);
+  }
+
   public function info($id)
   {
     $fragance = Fragance::findOrFail($id);

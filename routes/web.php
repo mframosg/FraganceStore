@@ -19,6 +19,10 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('/home/search', 'App\Http\Controllers\FraganceController@search')->name('search');
+
+Route::get('/home/solds', 'App\Http\Controllers\HomeController@solds')->name('solds');
+
 Route::get('/home/car', 'App\Http\Controllers\ItemController@list')->name('car.buy')->middleware('auth');
 
 Route::put('/home/car{item_id}/{fragance_id}', 'App\Http\Controllers\ItemController@edit')->name('car.edit')->middleware('auth');
