@@ -24,11 +24,11 @@
                           <input type="number" class="btn btn-outline-primary btn-block col-4 mt-2" name="quantity" value="{{$item->getQuantity()}}"
                               min="1" max="99" />
                               <button type="submit"
-                              class=" btn btn-outline-primary btn-block col-8 mt-2">Update Quantity</button>
+                              class=" btn btn-outline-primary btn-block col-8 mt-2">{{ __('home.update-quantity')}}</button>
                       </form>
                         <form action="{{ route('item.delete', $fragance->getId()) }}" method="POST">
                             @csrf @method('DELETE')
-                            <button type="submit" class=" btn btn-outline-primary btn-block col-15 mt-2">Delete<i
+                            <button type="submit" class=" btn btn-outline-primary btn-block col-15 mt-2">{{ __('home.delete')}}<i
                                     class="fa 	fas fa-shopping-cart"></i></button>
                         </form>
 
@@ -42,11 +42,11 @@
     <p class="btn btn-warning btn-block btn-lg">$ {{$total}}</p>
     <form action="{{ route('order.add', $total) }}" method="post">
       @csrf
-    <button class="btn btn-info btn-block">Confirmar compra</button>
+    <button class="btn btn-info btn-block">{{ __('home.purchase-confirm')}}</button>
     <select class="form-control" name="paymentType" required="true">
-      <option value="PSE">PSE</option>
-      <option value="Credit Card">Credit Card</option>
-      <option value="PayPal">PayPal</option>
+      <option value="PSE">{{ __('home.pse')}}</option>
+      <option value="Credit Card">{{ __('home.credit-card')}}</option>
+      <option value="PayPal">{{ __('home.paypal')}}</option>
     </select>
   </form>
     <br>

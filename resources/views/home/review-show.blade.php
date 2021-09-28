@@ -5,8 +5,8 @@
             <table class="table table-bordered">
                 <thead class="thead-dark">
                     <tr>
-                        <th scope="col">Comment</th>
-                        <th scope="col">Starts</th>
+                        <th scope="col">{{ __('home.comments')}}</th>
+                        <th scope="col">{{ __('home.stars')}}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -36,7 +36,7 @@
         <div class="col-12 col.sm-10 col-lg-3 mx-auto">
             <form action="{{ route('review.delete', [$fragance_id, $review->getId()]) }}" method="POST">
                 @csrf @method('DELETE')
-                <button type="submit" class="btn btn-danger btn-block">Borrar</button>
+                <button type="submit" class="btn btn-danger btn-block">{{ __('home.delete')}}</button>
             </form>
             <br>
         </div>

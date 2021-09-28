@@ -21,7 +21,7 @@
     <!-- Navigation-->
     <nav class="navbar mt-0 navbar-expand-lg bg-dark text-uppercase" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="{{ route('home.index') }}">Home</a>
+        <a class="navbar-brand js-scroll-trigger" href="{{ route('home.index') }}">{{ __('home.home')}}</a>
         <button
           class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded"
           type="button"
@@ -49,18 +49,18 @@
                <div class="col-xs-8 col-xs-offset-2">
                 <div class="input-group ">
                   <div class="input-group-prepend">
-                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</button>
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ __('home.categories')}}</button>
                     <div class="dropdown-menu">
-                      <a class="dropdown-item" href="#">All</a>
+                      <a class="dropdown-item" href="#">{{ __('home.all')}}</a>
                       <div role="separator" class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Male</a>
-                      <a class="dropdown-item" href="#">Female</a>
-                      <a class="dropdown-item" href="#">Sweet</a>
-                      <a class="dropdown-item" href="#">Citric</a>
-                      <a class="dropdown-item" href="#">Refreshing</a>
+                      <a class="dropdown-item" href="#">{{ __('home.male')}}</a>
+                      <a class="dropdown-item" href="#">{{ __('home.female')}}</a>
+                      <a class="dropdown-item" href="#">{{ __('home.sweet')}}</a>
+                      <a class="dropdown-item" href="#">{{ __('home.citrict')}}</a>
+                      <a class="dropdown-item" href="#">{{ __('home.refreshing')}}</a>
                     </div>
                   </div>
-                 <input type="text" class="form-control rounded-0" name="x" placeholder="Search">
+                 <input type="text" class="form-control rounded-0" name="x" placeholder="{{ __('home.search')}}">
                   <div class="input-group-append">
                      <button class="btn btn-primary rounded-rigth" type="button">
                         <i class="fas fa-search"></i>
@@ -76,7 +76,7 @@
                 <a
                   class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
                   href="{{ route('admin.home') }}"
-                  >Admin</a
+                  >{{ __('home.admin')}}</a
                 >
               </li>
               <li class="nav-item mx-0 mx-lg-1" >
@@ -115,7 +115,7 @@
           <div class="divider-custom-line"></div>
         </div>
         <!-- Jumbotron Subheading-->
-        <p class="masthead-subheading font-weight-bolder mb-0">Welcome</p>
+        <p class="masthead-subheading font-weight-bolder mb-0">{{ __('home.welcome')}}</p>
       </div>
     </header>
 
@@ -128,7 +128,7 @@
         <div class="row">
           <!-- Footer Social Icons-->
           <div class="col-6 mt-3">
-            <h4 class="text-uppercase mb-4">Follow us on</h4>
+            <h4 class="text-uppercase mb-4">{{ __('home.follow-us')}}</h4>
             <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f"></i></a>
             <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-twitter"></i></a>
             <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-github"></i></a>

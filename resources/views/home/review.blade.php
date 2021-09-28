@@ -1,5 +1,5 @@
 @extends('layouts.app') @section('content')
-<h2 class="text-center mt-5 mb-5 col-12">Available your reviews list</h2>
+<h2 class="text-center mt-5 mb-5 col-12">{{ __('home.available-review')}}</h2>
 
 
 <div class="card-columns">

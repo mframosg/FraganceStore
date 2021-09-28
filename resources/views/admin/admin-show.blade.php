@@ -5,11 +5,11 @@
             <table class="table table-bordered">
                 <thead class="thead-dark">
                     <tr>
-                        <th scope="col">Title</th>
+                        <th scope="col">{{ __('home.title')}}</th>
 
-                        <th scope="col">Category</th>
-                        <th scope="col">Description</th>
-                        <th scope="col">Price</th>
+                        <th scope="col">{{ __('home.category')}}</th>
+                        <th scope="col">{{ __('home.description')}}</th>
+                        <th scope="col">{{ __('home.price')}}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -27,16 +27,16 @@
                                         {{ $fragance->getCategory() }}
                                     </option>
                                     <option value="Sweet">
-                                        Sweet
+                                        {{ __('home.sweet')}}
                                     </option>
                                     <option value="Refreshing">
-                                        Refreshing 
+                                        {{ __('home.refreshing')}}
                                     </option>
                                     <option value="Male">
-                                        Male 
+                                        {{ __('home.male')}}
                                     </option>
                                     <option value="Female">
-                                        Female 
+                                        {{ __('home.female')}} 
                                     </option>
                                 </select> 
                             </td>
@@ -52,13 +52,13 @@
                 </tbody>
 
             </table>
-            <button type="submit" class="btn btn-primary btn-block">Volver/Editar</button>
+            <button type="submit" class="btn btn-primary btn-block">{{ __('home.back')}}</button>
         </form>
         <br />
         <div class="col-12 col.sm-10 col-lg-3 mx-auto">
             <form action="{{ route('fragance.delete', $fragance->getId()) }}" method="POST">
                 @csrf @method('DELETE')
-                <button type="submit" class="btn btn-danger btn-block">Borrar</button>
+                <button type="submit" class="btn btn-danger btn-block">{{ __('home.delete')}}</button>
             </form>
             <br>
         </div>

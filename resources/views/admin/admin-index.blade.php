@@ -1,5 +1,5 @@
 @extends('layouts.app') @section('content') @section('user', auth()->user()->getName(),)
-<h2 class="text-center mt-5 mb-5 col-12">Available fragrances list</h2>
+<h2 class="text-center mt-5 mb-5 col-12">{{ __('home.available-fragance')}}</h2>
 
 <div class="card-columns">
   @foreach ($fragances as $fragance)
@@ -21,6 +21,6 @@
 </div>
 
 <div class="text-center mt-5 mb-5">
-  <a href="{{ route('fragance.index') }}" class="btn-lg btn-primary p-3"> Add another fragance </a>
+  <a href="{{ route('fragance.index') }}" class="btn-lg btn-primary p-3"> {{ __('home.add-fragance')}} </a>
 </div>
 @endsection
