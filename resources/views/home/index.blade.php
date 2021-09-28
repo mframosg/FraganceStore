@@ -1,5 +1,5 @@
 @extends('layouts.app') @section('content')
-    <!-- Portfolio Section-->
+
     <div class="container">
         <form action="{{ route('search') }}" method="get">
             <div class="row">
@@ -29,6 +29,7 @@
             </div>
         </form>
     </div>
+    <!-- Portfolio Section-->
     <section class="page-section portfolio" id="portfolio">
 
         <div class="container">
