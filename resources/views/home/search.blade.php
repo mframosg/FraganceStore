@@ -9,13 +9,13 @@
 
                         <select class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false" name="category">
-                            <option value="All" class="dropdown-item">All</option>
+                            <option value="All" class="dropdown-item">{{ __('home.all')}}</option>
                             <div role="separator" class="dropdown-divider"></div>
-                            <option value="Male" class="dropdown-item">Male</option>
-                            <option value="Female" class="dropdown-item">Female</option>
-                            <option value="Sweet" class="dropdown-item">Sweet</option>
-                            <option value="Citric" class="dropdown-item">Citric</option>
-                            <option value="Refreshing" class="dropdown-item">Refreshing</option>
+                            <option value="Male" class="dropdown-item">{{ __('home.male')}}</option>
+                            <option value="Female" class="dropdown-item">{{ __('home.female')}}</option>
+                            <option value="Sweet" class="dropdown-item">{{ __('home.sweet')}}</option>
+                            <option value="Citric" class="dropdown-item">{{ __('home.citric')}}</option>
+                            <option value="Refreshing" class="dropdown-item">{{ __('home.refreshing')}}</option>
                         </select>
                     </div>
                 </div>
@@ -33,7 +33,7 @@
 
         <div class="container">
             <!-- Portfolio Section Heading-->
-            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-5">Fragances</h2>
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-5">{{ __('home.fragances')}}</h2>
             <!-- Portfolio Grid Items-->
             <div class="row">
                 <!-- Portfolio Item 1-->

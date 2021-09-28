@@ -3,7 +3,7 @@
     <section class="page-section portfolio" id="portfolio">
         <div class="container">
             <!-- Portfolio Section Heading-->
-            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-5">Portfolio</h2>
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-5">{{ __('home.wish-list')}}</h2>
             <!-- Portfolio Grid Items-->
             <div class="row">
                 <!-- Portfolio Item 1-->
@@ -30,13 +30,13 @@
                                 
                                     @if (is_null($wishlist))
                                         <a href="{{ route('wishlist.add', $fragance->getId()) }}"
-                                            class=" btn btn-outline-success btn-block mt-2 col-12">Add Wish <i
+                                            class=" btn btn-outline-success btn-block mt-2 col-12">{{ __('home.add-wish')}}<i
                                                 class="fa 	far fas fa-heart"></i></a>
                                     @else
                                         <form action="{{ route('wishlist.delete', $fragance->getId()) }}" method="POST">
                                             @csrf @method('DELETE')
                                             <button type="submit"
-                                                class=" btn btn-outline-success btn-block mt-2 col-25">Delete Wish <i
+                                                class=" btn btn-outline-success btn-block mt-2 col-25">{{ __('home.delete-wish')}}<i
                                                     class="fa 	far fas fa-heart"></i>
                                             </button>
                                         </form>

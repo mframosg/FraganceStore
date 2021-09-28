@@ -5,7 +5,7 @@
 
         <div class="container">
             <!-- Portfolio Section Heading-->
-            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-5">Sold Fragances</h2>
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-5">{{ __('home.sold-fragances')}}s</h2>
             <!-- Portfolio Grid Items-->
             <div class="row">
                 <!-- Portfolio Item 1-->

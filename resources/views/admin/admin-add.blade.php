@@ -13,11 +13,11 @@
 
       <div class="form-group">
         <select class="form-control" name="category" required="true" >
-          <option value="Sweet">Sweet</option>
-          <option value="Female">Female</option>
-          <option value="Male">Male</option>
-          <option value="Citrict">Citrict</option>
-          <option value="Refreshing">Refreshing</option>
+          <option value="Sweet">{{ __('home.sweet')}}</option>
+          <option value="Female">{{ __('home.female')}}</option>
+          <option value="Male">{{ __('home.male')}}</option>
+          <option value="Citrict">{{ __('home.citrict')}}</option>
+          <option value="Refreshing">{{ __('home.refreshing')}}</option>
         </select>
       </div>
 
@@ -31,7 +31,7 @@
 
       <br />
       <div class="text-center">
-        <button type="submit" class="btn-lg btn-info">Add product</button>
+        <button type="submit" class="btn-lg btn-info">{{ __('home.add-product')}}</button>
       </div>
     </div>
   </form>
