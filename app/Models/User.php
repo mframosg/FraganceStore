@@ -89,4 +89,12 @@ class User extends Authenticatable
   public function whishlist(){
     return $this->belongsTo(WishList::class);
   }
+
+  public function items(){
+    return $this->hasMany(Item::class);
+  }
+
+  public function orders(){
+    return $this->hasMany(Order::class);
+  }
 }

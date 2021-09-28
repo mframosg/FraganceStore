@@ -23,6 +23,8 @@ Route::get('/home/car', 'App\Http\Controllers\ItemController@list')->name('car.b
 
 Route::put('/home/car{item_id}/{fragance_id}', 'App\Http\Controllers\ItemController@edit')->name('car.edit')->middleware('auth');
 
+Route::post('/home/car/{total}', 'App\Http\Controllers\OrderController@add')->name('order.add')->middleware('auth');
+
 Route::get('/home/wish-list', 'App\Http\Controllers\WishListController@list')->name('home.wish')->middleware('auth');
 
 Route::get('home/{id}', 'App\Http\Controllers\WishListController@add')->name("wishlist.add")->middleware('auth');
