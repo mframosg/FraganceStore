@@ -1,38 +1,38 @@
 @extends('layouts.app') @section('content')
-<section class="page-section portfolio" id="portfolio">
-    <div class="container">
-        <form action="{{ route('search') }}" method="get">
-            <div class="row">
-                <div class="col-xl-8 col-xl-offset-2">
-                    <div class="input-group ">
-                        <div class="input-group-prepend">
+    <section class="page-section portfolio" id="portfolio">
+        <div class="container">
+            <form action="{{ route('search') }}" method="get">
+                <div class="row">
+                    <div class="col-xl-8 col-xl-offset-2">
+                        <div class="input-group ">
+                            <div class="input-group-prepend">
 
-                            <select class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false" name="category">
-                                <option value="All" class="dropdown-item">All</option>
-                                <div role="separator" class="dropdown-divider"></div>
-                                <option value="Male" class="dropdown-item">Male</option>
-                                <option value="Female" class="dropdown-item">Female</option>
-                                <option value="Sweet" class="dropdown-item">Sweet</option>
-                                <option value="Citric" class="dropdown-item">Citric</option>
-                                <option value="Refreshing" class="dropdown-item">Refreshing</option>
-                            </select>
+                                <select class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false" name="category">
+                                    <option value="All" class="dropdown-item">All</option>
+                                    <div role="separator" class="dropdown-divider"></div>
+                                    <option value="Male" class="dropdown-item">Male</option>
+                                    <option value="Female" class="dropdown-item">Female</option>
+                                    <option value="Sweet" class="dropdown-item">Sweet</option>
+                                    <option value="Citric" class="dropdown-item">Citric</option>
+                                    <option value="Refreshing" class="dropdown-item">Refreshing</option>
+                                </select>
+                            </div>
+                        </div>
+                        <input type="text" class="form-control rounded-0" name="title" placeholder="Search">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary rounded-rigth" type="submit">
+                                <i class="fas fa-search"></i>
+                            </button>
                         </div>
                     </div>
-                    <input type="text" class="form-control rounded-0" name="title" placeholder="Search">
-                    <div class="input-group-append">
-                        <button class="btn btn-primary rounded-rigth" type="submit">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </div>
                 </div>
-            </div>
-        </form>
-    </div>
+            </form>
 
-    <!-- Portfolio Section-->
-    
-        <div class="container">
+
+            <!-- Portfolio Section-->
+
+
             <!-- Portfolio Section Heading-->
             <h2 class="page-section-heading text-center text-uppercase text-secondary mb-5">{{ __('home.List') }}</h2>
             <!-- Portfolio Grid Items-->
