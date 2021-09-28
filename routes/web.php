@@ -23,6 +23,10 @@ Route::get('home/{id}', 'App\Http\Controllers\WishListController@add')->name("wi
 
 Route::delete('home/{id}', 'App\Http\Controllers\WishListController@delete')->name("wishlist.delete");
 
+Route::get('/home/car', 'App\Http\Controllers\HomeController@buy')->name('car.buy')->middleware('auth');
+
+Route::get('/home/wish-list', 'App\Http\Controllers\HomeController@wishList')->name('home.wish')->middleware('auth');
+
 Route::get('home/info/{id}', 'App\Http\Controllers\HomeController@info')->name("fragance.info");
 
 Route::get('home/info/comment/{id}', 'App\Http\Controllers\ReviewController@list')->name("review.index")->middleware('auth');
