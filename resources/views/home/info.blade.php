@@ -34,7 +34,7 @@
                                             <button type="submit"
                                                 class=" btn btn-outline-primary btn-block mt-2 col-25">Delete Wish <i
                                                     class="fa 	far fas fa-heart"></i>
-                                            </button>
+                                            </button> 
                                             </form>
                                             @endif
                                     <form action="" method="post" class="row col-8">
