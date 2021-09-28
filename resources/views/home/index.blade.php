@@ -1,5 +1,5 @@
 @extends('layouts.app') @section('content')
-    
+
     <!-- Portfolio Section-->
     <section class="page-section portfolio" id="portfolio">
         <div class="container">
