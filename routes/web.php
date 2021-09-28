@@ -19,6 +19,10 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('home/{id}', 'App\Http\Controllers\WishListController@add')->name("wishlist.add");
+
+Route::delete('home/{id}', 'App\Http\Controllers\WishListController@delete')->name("wishlist.delete");
+
 Route::get('home/info/{id}', 'App\Http\Controllers\HomeController@info')->name("fragance.info");
 
 Route::get('home/info/comment/{id}', 'App\Http\Controllers\ReviewController@list')->name("review.index")->middleware('auth');

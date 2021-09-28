@@ -100,7 +100,11 @@ class Fragance extends Model
     return $this->belongsTo(User::class);
   }
 
-  public function comments(){
-    return $this->hasMany(Comment::class);
+  public function reviews(){
+    return $this->hasMany(Review::class);
+  }
+
+  public function wishlists(){
+    return $this->belongsToMany(WishList::class);
   }
 }
