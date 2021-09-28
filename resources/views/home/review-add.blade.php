@@ -19,7 +19,7 @@
 
                 <br />
                 <div class="text-center">
-                    <button type="submit" class="btn-lg btn-info">Add comment</button>
+                    <button type="submit" class="btn-lg btn-info">{{ __('home.Windows')}}</button>
                 </div>
             </div>
         </form>
