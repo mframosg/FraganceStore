@@ -12,7 +12,13 @@
       </div>
 
       <div class="form-group">
-        <input type="text" class="form-control" name="category" placeholder="Category" required="true" />
+        <select class="form-control" name="category" required="true" >
+          <option value="Sweet">Sweet</option>
+          <option value="Female">Female</option>
+          <option value="Male">Male</option>
+          <option value="Citrict">Citrict</option>
+          <option value="Refreshing">Refreshing</option>
+        </select>
       </div>
 
       <div class="form-group">
