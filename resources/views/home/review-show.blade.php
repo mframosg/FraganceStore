@@ -30,7 +30,7 @@
                 </tbody>
 
             </table>
-            <button type="submit" class="btn btn-primary btn-block">Volver/Editar</button>
+            <button type="submit" class="btn btn-primary btn-block">{{ __('home.back')}}</button>
         </form>
         <br />
         <div class="col-12 col.sm-10 col-lg-3 mx-auto">

@@ -18,7 +18,7 @@
 </div>
 
 <div class="text-center mt-5 mb-5">
-  <a href="{{ route('review.add.index', $fragance->getId()) }}" class="btn-lg btn-primary p-3"> Add another review </a>
-  <a href="{{ route('fragance.info', $fragance->getId()) }}" class="btn-lg btn-primary p-3"> All reviews </a>
+  <a href="{{ route('review.add.index', $fragance->getId()) }}" class="btn-lg btn-primary p-3"> {{ __('home.add-review')}}</a>
+  <a href="{{ route('fragance.info', $fragance->getId()) }}" class="btn-lg btn-primary p-3"> {{ __('home.all')}} </a>
 </div>
 @endsection

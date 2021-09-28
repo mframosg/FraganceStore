@@ -74,7 +74,7 @@
                                 <br>
                                 <a class="btn btn-primary" data-dismiss="modal"
                                     href="{{ route('review.index', $fragance->getId()) }}">
-                                    Your Reviews
+                                    {{ __('home.Reviews')}}
                                 </a>
                                 <br>
                                 <br>
@@ -96,7 +96,7 @@
                                 <br>
                                 <a class="btn btn-primary" href="{{ route('home.index') }}">
                                     <i class="fas fa-times fa-fw"></i>
-                                    Close Window
+                                    {{ __('home.Windows')}}
                                 </a>
                             </div>
                         </div>
