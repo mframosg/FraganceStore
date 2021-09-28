@@ -21,8 +21,25 @@
 
 
 
-                            <td><input type="text" class="form-control" value="{{ $fragance->getCategory() }}"
-                                    name="category" required="true"></td>
+                            <td> 
+                                <select class="form-control" name="category">
+                                    <option selected disabled hidden>
+                                        {{ $fragance->getCategory() }}
+                                    </option>
+                                    <option value="Sweet">
+                                        Sweet
+                                    </option>
+                                    <option value="Refreshing">
+                                        Refreshing 
+                                    </option>
+                                    <option value="Male">
+                                        Male 
+                                    </option>
+                                    <option value="Female">
+                                        Female 
+                                    </option>
+                                </select> 
+                            </td>
 
                             <td><input type="text" class="form-control" value="{{ $fragance->getDescription() }}"
                                     name="description" required="true"></td>

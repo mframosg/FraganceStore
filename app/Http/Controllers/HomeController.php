@@ -22,6 +22,16 @@ class HomeController extends Controller
     return view("home.info")->with("fragance", $fragance)->with("reviews", $reviews);
   }
 
+  public function buy()
+  {
+    return view("home.shopping-car");
+  }
+
+  public function wishList()
+  {
+    return view("home.wish-list");
+  }
+
   public function home()
   {
     return redirect()->route("home.index");
