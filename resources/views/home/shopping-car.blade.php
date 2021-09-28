@@ -3,6 +3,7 @@
     {{-- TODO: FOR PARA MOSTRAR LOS ARTICULOS DEL CARRITO --}}
 
     <div class="card-columns">
+        
         @foreach ($items as $item)
             @foreach ($fragances as $fragance)
                 @if ($item->getFragance_id() == $fragance->getId())
@@ -32,12 +33,22 @@
                         </form>
 
                     </div>
+                    
                 @endif
-            @endforeach
+          @endforeach
         @endforeach
     </div>
     <br>
+    <p class="btn btn-warning btn-block btn-lg">$ {{$total}}</p>
+    <form action="{{ route('order.add', $total) }}" method="post">
+      @csrf
     <button class="btn btn-info btn-block">Confirmar compra</button>
+    <select class="form-control" name="paymentType" required="true">
+      <option value="PSE">PSE</option>
+      <option value="Credit Card">Credit Card</option>
+      <option value="PayPal">PayPal</option>
+    </select>
+  </form>
     <br>
     <br>
 @endsection

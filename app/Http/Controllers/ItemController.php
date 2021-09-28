@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Item;
 use App\Models\Fragance;
+use App\Models\Order;
 
 class ItemController extends Controller
 {
@@ -22,10 +23,13 @@ class ItemController extends Controller
         $fragance = Fragance::findOrFail($id);
         $subTotal = $fragance->getPrice() * $request->input("quantity");
 
+        $order_id = Order::count()+1;
+
         Item::create([
             "quantity" => $request->input("quantity"),
             "subTotal" => $subTotal,
             "user_id" => auth()->user()->getId(),
+            "order_id" => $order_id,
             "fragance_id" => $id,
         ]);
 
@@ -43,11 +47,14 @@ class ItemController extends Controller
 
     public function list()
     {
-
+        $order_id = Order::count();
         $fragances = Fragance::all();
-        $items = Item::where('user_id', auth()->user()->getId())->get();
+        $items = Item::where('user_id', auth()->user()->getId())->where('order_id', '>', $order_id)->get();
+        $orders = Order::all();
+        $total = Item::where('user_id', auth()->user()->getId())->where('order_id', '>', $order_id)->sum("subTotal");
 
-        return view("home.shopping-car")->with("items", $items)->with("fragances", $fragances);
+        return view("home.shopping-car")->with("items", $items)->with("fragances", $fragances)
+            ->with("total", $total)->with("orders", $orders);
     }
 
     public function edit($item_id, $fragance_id, Request $request)
