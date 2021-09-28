@@ -3,13 +3,7 @@
 <section class="page-section portfolio" id="portfolio">
   <div class="container">
     <!-- Portfolio Section Heading-->
-    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Portfolio</h2>
-    <!-- Icon Divider-->
-    <div class="divider-custom">
-      <div class="divider-custom-line"></div>
-      <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-      <div class="divider-custom-line"></div>
-    </div>
+    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-5">Portfolio</h2>
     <!-- Portfolio Grid Items-->
     <div class="row">
       <!-- Portfolio Item 1-->
@@ -25,6 +19,13 @@
           </div>
         </a>
           <img class="img-fluid" src="{{ asset("/img/fragance/$fragance->image") }}" alt="not founded" />
+        </div>
+        <div class="row">
+          <a href="#" class=" btn btn-outline-primary btn-block mt-2 col-4">Wish list <i class="fa 	far fas fa-heart"></i></a>
+          <form action="" method="post" class="row col-8" >
+            <a href="#" class=" btn btn-outline-primary btn-block col-8 mt-2">Add<i class="fa 	fas fa-shopping-cart"></i></a>
+            <input type="number" class="btn btn-outline-primary btn-block col-4 " value="1" min="1" max="99" />
+          </form> 
         </div>
       </div>
       @endforeach

@@ -45,7 +45,7 @@
                                     <div class="card">
                                       <div class="card-body">
                                         <h5 class="card-title">
-                                          <a style="text-decoration: none" href="{{ route('review.show', [$fragance->getId(), $review->getId()]) }}"> {{ $review->getComment() }}</a>
+                                            {{ $review->getComment() }}
                                         </h5>
                                       </div>
                                       <div class="card-footer">
