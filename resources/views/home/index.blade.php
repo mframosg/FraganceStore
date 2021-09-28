@@ -1,4 +1,5 @@
 @extends('layouts.app') @section('content')
+<section class="page-section portfolio" id="portfolio">
     <div class="container">
         <form action="{{ route('search') }}" method="get">
             <div class="row">
@@ -30,7 +31,7 @@
     </div>
 
     <!-- Portfolio Section-->
-    <section class="page-section portfolio" id="portfolio">
+    
         <div class="container">
             <!-- Portfolio Section Heading-->
             <h2 class="page-section-heading text-center text-uppercase text-secondary mb-5">{{ __('home.List') }}</h2>
