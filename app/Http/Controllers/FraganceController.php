@@ -84,4 +84,17 @@ class FraganceController extends Controller
 
     return redirect()->route("admin.home");
   }
+
+  public function search(Request $request)
+  {
+    if($request->input("category") == "All"){
+    $fragances = Fragance::where('title', $request->input("title"))->get();
+    }
+
+    if($request->input("category") != "All"){
+      $fragances = Fragance::where('title', $request->input("title"))->where('category', $request->input("category"))->get();
+      }
+
+    return view("home.search")->with("fragances", $fragances);
+  }
 }
