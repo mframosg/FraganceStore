@@ -60,7 +60,7 @@
                       <a class="dropdown-item" href="#">Refreshing</a>
                     </div>
                   </div>
-                 <input type="text" class="form-control rounded-0" name="x"  placeholder="Search">
+                 <input type="text" class="form-control rounded-0" name="x" placeholder="Search">
                   <div class="input-group-append">
                      <button class="btn btn-primary rounded-rigth" type="button">
                         <i class="fas fa-search"></i>
@@ -80,7 +80,10 @@
                 >
               </li>
               <li class="nav-item mx-0 mx-lg-1" >
-                <a href="#" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"><i class="fas fa-heart"></i></a>
+                <a href="{{ route('car.buy') }}" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"><i class="fas fa-shopping-cart"></i></a>
+              </li>
+              <li class="nav-item mx-0 mx-lg-1" >
+                <a href="{{ route('home.wish') }}" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"><i class="fas fa-heart"></i></a>
               </li>
             @endif
             <li class="nav-item mx-0 mx-lg-1">

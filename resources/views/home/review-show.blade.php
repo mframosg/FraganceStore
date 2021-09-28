@@ -30,14 +30,15 @@
                 </tbody>
 
             </table>
-            <button type="submit" class="btn btn-primary">Volver/Editar</button>
+            <button type="submit" class="btn btn-primary btn-block">Volver/Editar</button>
         </form>
         <br />
         <div class="col-12 col.sm-10 col-lg-3 mx-auto">
             <form action="{{ route('review.delete', [$fragance_id, $review->getId()]) }}" method="POST">
                 @csrf @method('DELETE')
-                <button type="submit" class="btn btn-danger">Borrar</button>
+                <button type="submit" class="btn btn-danger btn-block">Borrar</button>
             </form>
+            <br>
         </div>
     </div>
 @endsection

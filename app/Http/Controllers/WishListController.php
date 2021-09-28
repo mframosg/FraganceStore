@@ -32,6 +32,15 @@ class WishListController extends Controller
     
     $wishlist->delete();
 
-    return redirect()->route("fragance.info", [$id]);
+    return back();
+  }
+
+  public function list()
+  {
+
+    $fragances = Fragance::all();
+    $wishlists = WishList::where('user_id', auth()->user()->getId())->get();
+
+    return view("home.wish-list")->with("wishlists", $wishlists)->with("fragances", $fragances);
   }
 }
