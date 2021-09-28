@@ -1,40 +1,56 @@
 @extends('layouts.app') @section('content')
 
-<section class="page-section portfolio" id="portfolio">
-    <div class="container">
-      <!-- Portfolio Section Heading-->
-      <h2 class="page-section-heading text-center text-uppercase text-secondary mb-5">Portfolio</h2>
-      <!-- Portfolio Grid Items-->
-      <div class="row">
-        <!-- Portfolio Item 1-->
+    <section class="page-section portfolio" id="portfolio">
+        <div class="container">
+            <!-- Portfolio Section Heading-->
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-5">Portfolio</h2>
+            <!-- Portfolio Grid Items-->
+            <div class="row">
+                <!-- Portfolio Item 1-->
 
-        {{-- Implementar desde el controlador que se manden las imagenes --}}
-        @foreach ($fragances as $fragance)
-        <div class="col-md-6 col-lg-4 mb-5">
-          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
-            <a style="text-decoration: none" href="{{ route('fragance.info', $fragance->getId()) }}">
-            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-              
-                <div class="portfolio-item-caption-content text-center text-white">
-                  <i class="fas fa-plus fa-3x"></i>
-                </div>
+                {{-- Implementar desde el controlador que se manden las imagenes --}}
+                @foreach ($wishlists as $wishlist)
+                    @foreach ($fragances as $fragance)
+                        @if ($wishlist->getFragance_id() == $fragance->getId())
+                            <div class="col-md-6 col-lg-4 mb-5">
+                                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
+                                    <a style="text-decoration: none"
+                                        href="{{ route('fragance.info', $fragance->getId()) }}">
+                                        <div
+                                            class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+
+                                            <div class="portfolio-item-caption-content text-center text-white">
+                                                <i class="fas fa-plus fa-3x"></i>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <img class="img-fluid" src="{{ asset("/img/fragance/$fragance->image") }}"
+                                        alt="not founded" />
+                                </div>
+                                
+                                    @if (is_null($wishlist))
+                                        <a href="{{ route('wishlist.add', $fragance->getId()) }}"
+                                            class=" btn btn-outline-success btn-block mt-2 col-12">Add Wish <i
+                                                class="fa 	far fas fa-heart"></i></a>
+                                    @else
+                                        <form action="{{ route('wishlist.delete', $fragance->getId()) }}" method="POST">
+                                            @csrf @method('DELETE')
+                                            <button type="submit"
+                                                class=" btn btn-outline-success btn-block mt-2 col-25">Delete Wish <i
+                                                    class="fa 	far fas fa-heart"></i>
+                                            </button>
+                                        </form>
+                                    @endif
+                            </div>
+                        @endif
+                    @endforeach
+                @endforeach
             </div>
-          </a>
-            <img class="img-fluid" src="{{ asset("/img/fragance/$fragance->image") }}" alt="not founded" />
-          </div>
-          <div class="row">
-            <form action="" method="post" class="row col-8" >
-              <a href="#" class=" btn btn-outline-primary btn-block col-8 mt-2">Add<i class="fa 	fas fa-shopping-cart"></i></a>
-              <input type="number" class="btn btn-outline-primary btn-block col-4 " value="1" min="1" max="99" />
-            </form> 
-          </div>
         </div>
-        @endforeach
-      </div>
-    </div>
-  </section>
-  @if(auth()->user())
-    @section('user', auth()->user()->getName(),)
-  @endif
+    </section>
+    @if (auth()->user())
+        @section('user',
+            auth()->user()->getName(),)
+        @endif
 
-@endsection
+    @endsection

@@ -107,4 +107,8 @@ class Fragance extends Model
   public function wishlists(){
     return $this->belongsToMany(WishList::class);
   }
+
+  public function items(){
+    return $this->belongsToMany(Item::class);
+  }
 }

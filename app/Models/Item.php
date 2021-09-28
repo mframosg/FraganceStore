@@ -6,12 +6,18 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 
-class WishList extends Model
+class Item extends Model
 {
     use HasFactory;
+    //attributes id, quantity, subTotal, fragance_id, user_id, created_at, updated_at
+  protected $fillable = ["quantity", "subTotal", "fragance_id", "user_id"];
 
-      //attributes id, fragance_id, user_id, created_at, updated_at
-  protected $fillable = ["fragance_id", "user_id"];
+  public static function validate(Request $request)
+  {
+    $request->validate([
+      "quantity" => "required|numeric|gt:0",
+    ]);
+  }
 
   public function getId()
   {
@@ -21,6 +27,26 @@ class WishList extends Model
   public function setId($id)
   {
     $this->attributes["id"] = $id;
+  }
+
+  public function getQuantity()
+  {
+    return $this->attributes["quantity"];
+  }
+
+  public function setQuantity($quantity)
+  {
+    $this->attributes["quantity"] = $quantity;
+  }
+
+  public function getSubTotal()
+  {
+    return $this->attributes["subTotal"];
+  }
+
+  public function setSubTotal($subTotal)
+  {
+    $this->attributes["subTotal"] = $subTotal;
   }
 
   public function getFragance_id()
@@ -49,7 +75,7 @@ class WishList extends Model
     return $this->belongsTo(User::class);
   }
 
-  public function fragances(){
-    return $this->belongsToMany(Fragance::class, "fragance_wishlists", "wishlist_id", "fragance_id");
+  public function fragance(){
+    return $this->belongs(Fragance::class);
   }
 }

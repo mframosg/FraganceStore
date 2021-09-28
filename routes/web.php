@@ -19,9 +19,19 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/home/car', 'App\Http\Controllers\HomeController@buy')->name('car.buy')->middleware('auth');
+Route::get('/home/car', 'App\Http\Controllers\ItemController@list')->name('car.buy')->middleware('auth');
 
-Route::get('/home/wish-list', 'App\Http\Controllers\HomeController@wishList')->name('home.wish')->middleware('auth');
+Route::put('/home/car{item_id}/{fragance_id}', 'App\Http\Controllers\ItemController@edit')->name('car.edit')->middleware('auth');
+
+Route::get('/home/wish-list', 'App\Http\Controllers\WishListController@list')->name('home.wish')->middleware('auth');
+
+Route::get('home/{id}', 'App\Http\Controllers\WishListController@add')->name("wishlist.add")->middleware('auth');
+
+Route::delete('home/{id}', 'App\Http\Controllers\WishListController@delete')->name("wishlist.delete")->middleware('auth');
+
+Route::post('home/info/{id}', 'App\Http\Controllers\ItemController@add')->name("item.add")->middleware('auth');
+
+Route::delete('home/info/{id}', 'App\Http\Controllers\ItemController@delete')->name("item.delete")->middleware('auth');
 
 Route::get('home/info/{id}', 'App\Http\Controllers\HomeController@info')->name("fragance.info");
 
