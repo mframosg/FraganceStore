@@ -8,9 +8,9 @@ use Illuminate\Http\Request;
 
 class WishList extends Model
 {
-    use HasFactory;
+  use HasFactory;
 
-      //attributes id, fragance_id, user_id, created_at, updated_at
+  //attributes id, fragance_id, user_id, created_at, updated_at
   protected $fillable = ["fragance_id", "user_id"];
 
   public function getId()
@@ -45,11 +45,13 @@ class WishList extends Model
 
   //Relations
 
-  public function user(){
+  public function user()
+  {
     return $this->belongsTo(User::class);
   }
 
-  public function fragances(){
+  public function fragances()
+  {
     return $this->belongsToMany(Fragance::class, "fragance_wishlists", "wishlist_id", "fragance_id");
   }
 }

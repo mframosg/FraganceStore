@@ -29,7 +29,9 @@ class FraganceController extends Controller
       "category" => $request->input("category"),
       "description" => $request->input("description"),
       "price" => $request->input("price"),
-      "user_id" => auth()->user()->getId(),
+      "user_id" => auth()
+        ->user()
+        ->getId(),
     ]);
 
     return redirect()->route("admin.home");
@@ -42,7 +44,12 @@ class FraganceController extends Controller
 
   public function list()
   {
-    $fragances = Fragance::where('user_id', auth()->user()->getId())->get();
+    $fragances = Fragance::where(
+      "user_id",
+      auth()
+        ->user()
+        ->getId()
+    )->get();
 
     return view("admin.admin-index")->with("fragances", $fragances);
   }
@@ -63,7 +70,6 @@ class FraganceController extends Controller
 
   public function edit($id, Request $request)
   {
-
     $request->validate([
       "title" => "required",
       "category" => "required",
@@ -87,13 +93,15 @@ class FraganceController extends Controller
 
   public function search(Request $request)
   {
-    if($request->input("category") == "All"){
-    $fragances = Fragance::where('title', $request->input("title"))->get();
+    if ($request->input("category") == "All") {
+      $fragances = Fragance::where("title", $request->input("title"))->get();
     }
 
-    if($request->input("category") != "All"){
-      $fragances = Fragance::where('title', $request->input("title"))->where('category', $request->input("category"))->get();
-      }
+    if ($request->input("category") != "All") {
+      $fragances = Fragance::where("title", $request->input("title"))
+        ->where("category", $request->input("category"))
+        ->get();
+    }
 
     return view("home.search")->with("fragances", $fragances);
   }

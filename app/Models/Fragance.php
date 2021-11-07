@@ -96,19 +96,23 @@ class Fragance extends Model
 
   //Relations
 
-  public function user(){
+  public function user()
+  {
     return $this->belongsTo(User::class);
   }
 
-  public function reviews(){
+  public function reviews()
+  {
     return $this->hasMany(Review::class);
   }
 
-  public function wishlists(){
+  public function wishlists()
+  {
     return $this->belongsToMany(WishList::class);
   }
 
-  public function items(){
+  public function items()
+  {
     return $this->belongsToMany(Item::class);
   }
 }

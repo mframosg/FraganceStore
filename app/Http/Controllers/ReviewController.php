@@ -22,7 +22,9 @@ class ReviewController extends Controller
     Review::create([
       "comment" => $request->input("comment"),
       "starts" => $request->input("starts"),
-      "user_id" => auth()->user()->getId(),
+      "user_id" => auth()
+        ->user()
+        ->getId(),
       "fragance_id" => $id,
     ]);
 
@@ -40,16 +42,27 @@ class ReviewController extends Controller
   {
     $fragance = Fragance::findOrFail($id);
 
-    $reviews = Review::where('user_id', auth()->user()->getId())->where('fragance_id', $id)->get();
+    $reviews = Review::where(
+      "user_id",
+      auth()
+        ->user()
+        ->getId()
+    )
+      ->where("fragance_id", $id)
+      ->get();
 
-    return view("home.review")->with("reviews", $reviews)->with("fragance", $fragance);
+    return view("home.review")
+      ->with("reviews", $reviews)
+      ->with("fragance", $fragance);
   }
 
   public function show($fragance_id, $review_id)
   {
     $review = Review::findOrFail($review_id);
 
-    return view("home.review-show")->with("review", $review)->with("fragance_id", $fragance_id);
+    return view("home.review-show")
+      ->with("review", $review)
+      ->with("fragance_id", $fragance_id);
   }
 
   public function delete($fragance_id, $review_id)
@@ -61,17 +74,16 @@ class ReviewController extends Controller
 
   public function edit($fragance_id, $review_id, Request $request)
   {
-
     $request->validate([
-        "comment" => "required",
-        "starts" => "required|numeric|gt:0",
-      ]);
+      "comment" => "required",
+      "starts" => "required|numeric|gt:0",
+    ]);
 
     $review = Review::findOrFail($review_id);
 
     $review->fill([
-        "comment" => $request->input("comment"),
-        "starts" => $request->input("starts"),
+      "comment" => $request->input("comment"),
+      "starts" => $request->input("starts"),
     ]);
 
     $review->save();

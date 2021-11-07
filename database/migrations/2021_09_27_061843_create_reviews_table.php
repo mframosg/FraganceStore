@@ -6,32 +6,38 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateReviewsTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
-    {
-        Schema::create('reviews', function (Blueprint $table) {
-            $table->id();
-            $table->string("comment");
-            $table->integer("starts");
-            $table->unsignedBigInteger("user_id");
-            $table->foreign("user_id")->references("id")->on("users");
-            $table->unsignedBigInteger("fragance_id");
-            $table->foreign("fragance_id")->references("id")->on("fragances");
-            $table->timestamps();
-        });
-    }
+  /**
+   * Run the migrations.
+   *
+   * @return void
+   */
+  public function up()
+  {
+    Schema::create("reviews", function (Blueprint $table) {
+      $table->id();
+      $table->string("comment");
+      $table->integer("starts");
+      $table->unsignedBigInteger("user_id");
+      $table
+        ->foreign("user_id")
+        ->references("id")
+        ->on("users");
+      $table->unsignedBigInteger("fragance_id");
+      $table
+        ->foreign("fragance_id")
+        ->references("id")
+        ->on("fragances");
+      $table->timestamps();
+    });
+  }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::dropIfExists('reviews');
-    }
+  /**
+   * Reverse the migrations.
+   *
+   * @return void
+   */
+  public function down()
+  {
+    Schema::dropIfExists("reviews");
+  }
 }

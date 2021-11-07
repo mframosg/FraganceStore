@@ -17,9 +17,10 @@ class WishListController extends Controller
 
   public function add($id)
   {
-
     WishList::create([
-      "user_id" => auth()->user()->getId(),
+      "user_id" => auth()
+        ->user()
+        ->getId(),
       "fragance_id" => $id,
     ]);
 
@@ -28,8 +29,15 @@ class WishListController extends Controller
 
   public function delete($id)
   {
-    $wishlist = WishList::where('user_id', auth()->user()->getId())->where('fragance_id', $id)->first();
-    
+    $wishlist = WishList::where(
+      "user_id",
+      auth()
+        ->user()
+        ->getId()
+    )
+      ->where("fragance_id", $id)
+      ->first();
+
     $wishlist->delete();
 
     return back();
@@ -37,10 +45,16 @@ class WishListController extends Controller
 
   public function list()
   {
-
     $fragances = Fragance::all();
-    $wishlists = WishList::where('user_id', auth()->user()->getId())->get();
+    $wishlists = WishList::where(
+      "user_id",
+      auth()
+        ->user()
+        ->getId()
+    )->get();
 
-    return view("home.wish-list")->with("wishlists", $wishlists)->with("fragances", $fragances);
+    return view("home.wish-list")
+      ->with("wishlists", $wishlists)
+      ->with("fragances", $fragances);
   }
 }

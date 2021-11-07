@@ -17,95 +17,112 @@
     <link href="{{ asset('/css/styles.css') }}" rel="stylesheet" />
     <link href="{{ asset('/css/custom-styles.css') }}" rel="stylesheet" />
   </head>
+
   <body id="page-top">
     <!-- Navigation-->
     <nav class="navbar mt-0 navbar-expand-lg bg-dark text-uppercase" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="{{ route('home.index') }}">{{ __('home.home')}}</a>
-        <button
-          class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarResponsive"
-          aria-controls="navbarResponsive"
-          aria-expanded="false"
-          aria-label="Toggle navigation">
-          Menu
-          <i class="fas fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            @guest
-            <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('login') }}">{{ __("Login") }}</a>
-            </li>
-            <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('register') }}">{{ __("Register") }}</a>
-            </li>
-            @else
-            <div class="container">
-              <div class="row">    
-               <div class="col-xs-8 col-xs-offset-2">
-                <div class="input-group ">
-                  <div class="input-group-prepend">
-                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ __('home.categories')}}</button>
-                    <div class="dropdown-menu">
-                      <a class="dropdown-item" href="#">{{ __('home.all')}}</a>
-                      <div role="separator" class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">{{ __('home.male')}}</a>
-                      <a class="dropdown-item" href="#">{{ __('home.female')}}</a>
-                      <a class="dropdown-item" href="#">{{ __('home.sweet')}}</a>
-                      <a class="dropdown-item" href="#">{{ __('home.citrict')}}</a>
-                      <a class="dropdown-item" href="#">{{ __('home.refreshing')}}</a>
+        <div class="row">
+          <div class="col-8 container">
+            <div class="row">
+              <a class="navbar-brand col-2 js-scroll-trigger" href="{{ route('home.index') }}">{{ __("home.home") }}</a>
+              <button
+                class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarResponsive"
+                aria-controls="navbarResponsive"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+              </button>
+              <div class="container col-9">
+                <form action="{{ route('search') }}" class="ml-5" method="get">
+                  <div class="row">
+                    <div class="col-xs-8 col-xl-offset-2">
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <select
+                            class="btn btn-primary dropdown-toggle"
+                            type="button"
+                            data-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                            name="category">
+                            <option value="All" class="dropdown-item">{{ __("home.all") }}</option>
+                            <div role="separator" class="dropdown-divider"></div>
+                            <option value="Male" class="dropdown-item">{{ __("home.male") }}</option>
+                            <option value="Female" class="dropdown-item">
+                              {{ __("home.female") }}
+                            </option>
+                            <option value="Sweet" class="dropdown-item">
+                              {{ __("home.sweet") }}
+                            </option>
+                            <option value="Citric" class="dropdown-item">
+                              {{ __("home.citrict") }}
+                            </option>
+                            <option value="Refreshing" class="dropdown-item">
+                              {{ __("home.refreshing") }}
+                            </option>
+                          </select>
+                        </div>
+                        <input type="text" class="form-control rounded-0" name="title" placeholder="{{ __('home.search') }}" />
+                        <div class="input-group-append">
+                          <button class="btn btn-primary rounded-rigth" type="submit">
+                            <i class="fas fa-search"></i>
+                          </button>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                 <input type="text" class="form-control rounded-0" name="x" placeholder="{{ __('home.search')}}">
-                  <div class="input-group-append">
-                     <button class="btn btn-primary rounded-rigth" type="button">
-                        <i class="fas fa-search"></i>
-                     </button>
-                  </div>
-               </div>
+                </form>
               </div>
             </div>
           </div>
+          <div class="col-4">
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+              <ul class="navbar-nav ml-auto">
+                @guest
 
-            <li class="nav-item mx-0 mx-lg-1">
-              <a
-                class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                href="{{ route('solds') }}"
-                >{{ __('home.solds')}}</a
-              >
-            </li>
-            
+                <li class="nav-item mx-0 mx-lg-1">
+                  <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('login') }}">{{ __("Login") }}</a>
+                </li>
+                <li class="nav-item mx-0 mx-lg-1">
+                  <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('register') }}">{{ __("Register") }}</a>
+                </li>
+                @else
+                <li class="nav-item mx-0 mx-lg-1">
+                  <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('solds') }}">{{ __("home.solds") }}</a>
+                </li>
 
-            @if(auth()->user()->getAdmin() == 'Yes')
-              <li class="nav-item mx-0 mx-lg-1">
-                <a
-                  class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                  href="{{ route('admin.home') }}"
-                  >{{ __('home.admin')}}</a
-                >
-              </li>
-              <li class="nav-item mx-0 mx-lg-1" >
-                <a href="{{ route('car.buy') }}" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"><i class="fas fa-shopping-cart"></i></a>
-              </li>
-              <li class="nav-item mx-0 mx-lg-1" >
-                <a href="{{ route('home.wish') }}" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"><i class="fas fa-heart"></i></a>
-              </li>
-            @endif
-            <li class="nav-item mx-0 mx-lg-1">
-              <a
-                class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                href="{{ route('logout') }}"
-                onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();"
-                >{{ __("Logout") }}</a
-              >
-            </li>
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">@csrf</form>
-            @endguest
-          </ul>
+                @if (auth()->user()->getAdmin() == 'Yes')
+                <li class="nav-item mx-0 mx-lg-1">
+                  <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('admin.home') }}">{{ __("home.admin") }}</a>
+                </li>
+                <li class="nav-item mx-0 mx-lg-1">
+                  <a href="{{ route('car.buy') }}" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                    ><i class="fas fa-shopping-cart"></i
+                  ></a>
+                </li>
+                <li class="nav-item mx-0 mx-lg-1">
+                  <a href="{{ route('home.wish') }}" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"><i class="fas fa-heart"></i></a>
+                </li>
+                @endif
+                <li class="nav-item mx-0 mx-lg-1">
+                  <a
+                    class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                    href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                                                                         document.getElementById('logout-form').submit();"
+                    >{{ __("Logout") }}</a
+                  >
+                </li>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">@csrf</form>
+                @endguest
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </nav>
@@ -123,7 +140,7 @@
           <div class="divider-custom-line"></div>
         </div>
         <!-- Jumbotron Subheading-->
-        <p class="masthead-subheading font-weight-bolder mb-0">{{ __('home.welcome')}}</p>
+        <p class="masthead-subheading font-weight-bolder mb-0">{{ __("home.welcome") }}</p>
       </div>
     </header>
 
@@ -136,7 +153,7 @@
         <div class="row">
           <!-- Footer Social Icons-->
           <div class="col-6 mt-3">
-            <h4 class="text-uppercase mb-4">{{ __('home.follow-us')}}</h4>
+            <h4 class="text-uppercase mb-4">{{ __("home.follow-us") }}</h4>
             <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f"></i></a>
             <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-twitter"></i></a>
             <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-github"></i></a>

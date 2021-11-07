@@ -8,9 +8,9 @@ use Illuminate\Http\Request;
 
 class Review extends Model
 {
-    use HasFactory;
+  use HasFactory;
 
-    //attributes id, comment, starts, user_id, fragance_id, created_at, updated_at
+  //attributes id, comment, starts, user_id, fragance_id, created_at, updated_at
   protected $fillable = ["comment", "starts", "user_id", "fragance_id"];
 
   public static function validate(Request $request)
@@ -73,11 +73,13 @@ class Review extends Model
 
   //Relations
 
-  public function user(){
+  public function user()
+  {
     return $this->belongsTo(User::class);
   }
 
-  public function fragance(){
+  public function fragance()
+  {
     return $this->belongsTo(Fragance::class);
   }
 }

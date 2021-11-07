@@ -21,17 +21,37 @@ class HomeController extends Controller
     $fragances = Fragance::all();
     $items = Item::all();
 
-    return view("home.sold")->with("fragances", $fragances)->with("items", $items);
+    return view("home.sold")
+      ->with("fragances", $fragances)
+      ->with("items", $items);
   }
 
   public function info($id)
   {
     $fragance = Fragance::findOrFail($id);
-    $reviews = Review::where('fragance_id', $id)->get();
-    $wishlist = WishList::where('user_id', auth()->user()->getId())->where('fragance_id', $id)->first();
-    $item = Item::where('user_id', auth()->user()->getId())->where('fragance_id', $id)->first();
+    $reviews = Review::where("fragance_id", $id)->get();
+    $wishlist = WishList::where(
+      "user_id",
+      auth()
+        ->user()
+        ->getId()
+    )
+      ->where("fragance_id", $id)
+      ->first();
+    $item = Item::where(
+      "user_id",
+      auth()
+        ->user()
+        ->getId()
+    )
+      ->where("fragance_id", $id)
+      ->first();
 
-    return view("home.info")->with("fragance", $fragance)->with("reviews", $reviews)->with("wishlist", $wishlist)->with("item", $item);
+    return view("home.info")
+      ->with("fragance", $fragance)
+      ->with("reviews", $reviews)
+      ->with("wishlist", $wishlist)
+      ->with("item", $item);
   }
 
   public function wishList()

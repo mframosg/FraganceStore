@@ -78,23 +78,28 @@ class User extends Authenticatable
 
   //Relations
 
-  public function fragances(){
+  public function fragances()
+  {
     return $this->hasMany(Fragance::class);
   }
 
-  public function comments(){
+  public function comments()
+  {
     return $this->hasMany(Comment::class);
   }
 
-  public function whishlist(){
+  public function whishlist()
+  {
     return $this->belongsTo(WishList::class);
   }
 
-  public function items(){
+  public function items()
+  {
     return $this->hasMany(Item::class);
   }
 
-  public function orders(){
+  public function orders()
+  {
     return $this->hasMany(Order::class);
   }
 }
