@@ -22,7 +22,7 @@ class FraganceFactory extends Factory
     public function definition()
     {
         return [
-            'user_id' => $this->faker->numberBetween(1, 1000),
+            //'user_id' => $this->faker->numberBetween(1, 1000),
             'title' => $this->faker->monthName(),
             'category' => $this->faker->randomElement(['Male', 'Female', 'Sweet', 'Citrict', 'Refreshing']),
             'description' => $this->faker->text($maxNbChars = 100),

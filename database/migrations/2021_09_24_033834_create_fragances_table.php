@@ -20,7 +20,7 @@ class CreateFragancesTable extends Migration
       $table->string("category");
       $table->string("description");
       $table->double("price");
-      $table->unsignedBigInteger("user_id");
+      $table->unsignedBigInteger("user_id")->nullable();
       $table
         ->foreign("user_id")
         ->references("id")
