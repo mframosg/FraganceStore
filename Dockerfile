@@ -5,7 +5,12 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 COPY . /var/www/html
 COPY ./public/.htaccess /var/www/html/.htaccess
 WORKDIR /var/www/html
-RUN composer install --ignore-platform-reqs --no-interaction --no-plugins --no-scripts --prefer-dist 
+RUN composer install \
+    --ignore-platform-reqs \
+    --no-interaction \
+    --no-plugins \
+    --no-scripts \
+    --prefer-dist
 RUN php artisan key:generate
 RUN php artisan migrate:fresh --seed
 RUN a2enmod rewrite 
