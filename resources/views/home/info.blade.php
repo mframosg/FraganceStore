@@ -93,4 +93,4 @@
     </div>
   </div>
 </div>
-@endsection
+@if (auth()->user()) @section('user', auth()->user()->getName(),) @endif @endsection
