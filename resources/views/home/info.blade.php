@@ -20,7 +20,8 @@
               <div class="card">
                 <img class="img-fluid rounded mb-5" src="{{ asset("/img/fragance/$fragance->image") }}" alt="" />
                 <!-- Portfolio Modal - Text-->
-                <div class="card-body">
+                <div class="card-body">    
+                  
                   @if (is_null($wishlist))
                   <a href="{{ route('wishlist.add', $fragance->getId()) }}" class="btn btn-outline-success btn-block mt-2 col-12"
                     >Add Wish <i class="fa far fas fa-heart"></i
@@ -33,6 +34,7 @@
                     </button>
                   </form>
                   @endif
+            
                   <br />
                   @if (is_null($item))
                   <form action="{{ route('item.delete', $fragance->getId()) }}" method="post" class="row col-13">

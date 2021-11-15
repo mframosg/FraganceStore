@@ -28,8 +28,12 @@ class HomeController extends Controller
 
   public function info($id)
   {
+    $wishlist = null;
+    $item = null;
+
     $fragance = Fragance::findOrFail($id);
     $reviews = Review::where("fragance_id", $id)->get();
+    if(!auth()->guest()){
     $wishlist = WishList::where(
       "user_id",
       auth()
@@ -38,6 +42,7 @@ class HomeController extends Controller
     )
       ->where("fragance_id", $id)
       ->first();
+    
     $item = Item::where(
       "user_id",
       auth()
@@ -46,6 +51,7 @@ class HomeController extends Controller
     )
       ->where("fragance_id", $id)
       ->first();
+    }
 
     return view("home.info")
       ->with("fragance", $fragance)
