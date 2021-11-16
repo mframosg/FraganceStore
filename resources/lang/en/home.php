@@ -56,4 +56,7 @@ return [
   "fragances" => "Fragances",
   //*sold view*//
   "sold-fragances" => "Sold Fragances",
+  //API UPDATE
+  "api-notw"=>"Api is not working",
+  "pdf"=>"Generate PDF",
 ];
