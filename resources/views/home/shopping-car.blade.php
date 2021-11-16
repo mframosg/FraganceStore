@@ -12,7 +12,7 @@
         {{ $fragance->getTitle() }}
       </h5>
     </div>
-    <div class="card-footer text-center bg-white ">$ {{ $item->getsubTotal() }}</div>
+    <div class="card-footer text-center bg-white">$ {{ $item->getsubTotal() }}</div>
     <form action="{{ route('car.edit', [$item->getId(), $fragance->getId()]) }}" method="post" class="row col-12 mt-2">
       @csrf @method('PUT')
       <input type="number" class="btn btn-outline-primary btn-block col-4 mt-2" name="quantity" value="{{$item->getQuantity()}}" min="1" max="99" />
@@ -24,7 +24,6 @@
         {{ __("home.delete") }}<i class="fa fas fa-shopping-cart"></i>
       </button>
     </form>
-    
   </div>
 
   @endif @endforeach @endforeach
@@ -41,6 +40,6 @@
   </select>
 </form>
 <br />
-<a  class="btn btn-outline-dark btn-block mt-2" href="{{ route('order.pdf', 1) }}">{{ __("home.pdf") }}</a>
+<a class="btn btn-outline-dark btn-block mt-2" href="{{ route('order.pdf', 1) }}">{{ __("home.pdf") }}</a>
 <br />
 @endsection

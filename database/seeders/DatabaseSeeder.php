@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
-use \App\Models\Fragance;
+use App\Models\Fragance;
 
 class DatabaseSeeder extends Seeder
 {

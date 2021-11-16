@@ -54,7 +54,6 @@ class OrderController extends Controller
       ->where("order_id", ">", $order_id)
       ->sum("subTotal");
 
-    return PDF::loadView('home.pdf', compact('items', 'fragances', 'total'))
-      ->download('item.pdf');
+    return PDF::loadView("home.pdf", compact("items", "fragances", "total"))->download("item.pdf");
   }
 }

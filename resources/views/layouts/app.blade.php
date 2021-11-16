@@ -16,125 +16,129 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="{{ asset('/css/styles.css') }}" rel="stylesheet" />
     <link href="{{ asset('/css/custom-styles.css') }}" rel="stylesheet" />
-    
   </head>
 
   <body id="page-top">
     <!-- Navigation-->
     <nav class="navbar mt-0 navbar-expand-lg bg-dark text-uppercase justify-content-start" id="mainNav">
-          <div class="col-8 container">
-            <div class="row">
-              <a class="navbar-brand col-2 js-scroll-trigger" href="{{ route('home.index') }}">{{ __("home.home") }}</a>
-              <button
-                class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded"
-                type="button"
-                data-toggle="collapse"
-                data-target="#navbarResponsive"
-                aria-controls="navbarResponsive"
-                aria-expanded="false"
-                aria-label="Toggle navigation">
-                Menu
-                <i class="fas fa-bars"></i>
-              </button>
-              <div class="nav-item dropdown mt-2">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="flag-icon flag-icon-{{Config::get('languages')[App::getLocale()]['flag-icon']}}"></span> {{ Config::get('languages')[App::getLocale()]['display'] }}
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                @foreach (Config::get('languages') as $lang => $language)
-                    @if ($lang != App::getLocale())
-                            <a class="dropdown-item" href="{{ route('lang.switch', $lang) }}"><span class="flag-icon flag-icon-{{$language['flag-icon']}}"></span> {{$language['display']}}</a>
-                    @endif
-                @endforeach
-                </div>
-              </div>
-              <div class="container col-7">
-                <form action="{{ route('search') }}" class="ml-5" method="get">
-                  <div class="row">
-                    <div class="col-xs-8 col-xl-offset-2">
-                      <div class="input-group">
-                        <div class="input-group-prepend">
-                          <select
-                            class="btn btn-primary dropdown-toggle"
-                            type="button"
-                            data-toggle="dropdown"
-                            aria-haspopup="true"
-                            aria-expanded="false"
-                            name="category">
-                            <option value="All" class="dropdown-item">{{ __("home.all") }}</option>
-                            <div role="separator" class="dropdown-divider"></div>
-                            <option value="Male" class="dropdown-item">{{ __("home.male") }}</option>
-                            <option value="Female" class="dropdown-item">
-                              {{ __("home.female") }}
-                            </option>
-                            <option value="Sweet" class="dropdown-item">
-                              {{ __("home.sweet") }}
-                            </option>
-                            <option value="Citric" class="dropdown-item">
-                              {{ __("home.citrict") }}
-                            </option>
-                            <option value="Refreshing" class="dropdown-item">
-                              {{ __("home.refreshing") }}
-                            </option>
-                          </select>
-                        </div>
-                        <input type="text" class="form-control rounded-0" name="title" placeholder="{{ __('home.search') }}" />
-                        <div class="input-group-append">
-                          <button class="btn btn-primary rounded-rigth" type="submit">
-                            <i class="fas fa-search"></i>
-                          </button>
-                        </div>
-                      </div>
+      <div class="col-8 container">
+        <div class="row">
+          <a class="navbar-brand col-2 js-scroll-trigger" href="{{ route('home.index') }}">{{ __("home.home") }}</a>
+          <button
+            class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarResponsive"
+            aria-controls="navbarResponsive"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars"></i>
+          </button>
+          <div class="nav-item dropdown mt-2">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdownMenuLink"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false">
+              <span class="flag-icon flag-icon-{{Config::get('languages')[App::getLocale()]['flag-icon']}}"></span>
+              {{ Config::get("languages")[App::getLocale()]["display"] }}
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              @foreach (Config::get('languages') as $lang => $language) @if ($lang != App::getLocale())
+              <a class="dropdown-item" href="{{ route('lang.switch', $lang) }}"
+                ><span class="flag-icon flag-icon-{{$language['flag-icon']}}"></span> {{ $language["display"] }}</a
+              >
+              @endif @endforeach
+            </div>
+          </div>
+          <div class="container col-7">
+            <form action="{{ route('search') }}" class="ml-5" method="get">
+              <div class="row">
+                <div class="col-xs-8 col-xl-offset-2">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <select
+                        class="btn btn-primary dropdown-toggle"
+                        type="button"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                        name="category">
+                        <option value="All" class="dropdown-item">{{ __("home.all") }}</option>
+                        <div role="separator" class="dropdown-divider"></div>
+                        <option value="Male" class="dropdown-item">{{ __("home.male") }}</option>
+                        <option value="Female" class="dropdown-item">
+                          {{ __("home.female") }}
+                        </option>
+                        <option value="Sweet" class="dropdown-item">
+                          {{ __("home.sweet") }}
+                        </option>
+                        <option value="Citric" class="dropdown-item">
+                          {{ __("home.citrict") }}
+                        </option>
+                        <option value="Refreshing" class="dropdown-item">
+                          {{ __("home.refreshing") }}
+                        </option>
+                      </select>
+                    </div>
+                    <input type="text" class="form-control rounded-0" name="title" placeholder="{{ __('home.search') }}" />
+                    <div class="input-group-append">
+                      <button class="btn btn-primary rounded-rigth" type="submit">
+                        <i class="fas fa-search"></i>
+                      </button>
                     </div>
                   </div>
-                </form>
+                </div>
               </div>
-            </div>
+            </form>
           </div>
-          <div class="col-4 pl-0">
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-              <ul class="navbar-nav ml-auto">
-                @guest
+        </div>
+      </div>
+      <div class="col-4 pl-0">
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            @guest
 
-                <li class="nav-item mx-0 mx-lg-1">
-                  <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('login') }}">{{ __("Login") }}</a>
-                </li>
-                <li class="nav-item mx-0 mx-lg-1">
-                  <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('register') }}">{{ __("Register") }}</a>
-                </li>
-                @else
-                <li class="nav-item mx-0 mx-lg-1">
-                  <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('solds') }}">{{ __("home.solds") }}</a>
-                </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('login') }}">{{ __("Login") }}</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('register') }}">{{ __("Register") }}</a>
+            </li>
+            @else
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('solds') }}">{{ __("home.solds") }}</a>
+            </li>
 
-                @if (auth()->user()->getAdmin() == 'Yes')
-                <li class="nav-item mx-0 mx-lg-1">
-                  <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('admin.home') }}">{{ __("home.admin") }}</a>
-                </li>
-                @endif
-                <li class="nav-item mx-0 mx-lg-1">
-                  <a href="{{ route('car.buy') }}" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                    ><i class="fas fa-shopping-cart"></i
-                  ></a>
-                </li>
-                <li class="nav-item mx-0 mx-lg-1">
-                  <a href="{{ route('home.wish') }}" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"><i class="fas fa-heart"></i></a>
-                </li>
-                
-                <li class="nav-item mx-0 mx-lg-1">
-                  <a
-                    class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                    href="{{ route('logout') }}"
-                    onclick="event.preventDefault();
+            @if (auth()->user()->getAdmin() == 'Yes')
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('admin.home') }}">{{ __("home.admin") }}</a>
+            </li>
+            @endif
+            <li class="nav-item mx-0 mx-lg-1">
+              <a href="{{ route('car.buy') }}" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"><i class="fas fa-shopping-cart"></i></a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a href="{{ route('home.wish') }}" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"><i class="fas fa-heart"></i></a>
+            </li>
+
+            <li class="nav-item mx-0 mx-lg-1">
+              <a
+                class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                href="{{ route('logout') }}"
+                onclick="event.preventDefault();
                                                                          document.getElementById('logout-form').submit();"
-                    >{{ __("Logout") }}</a
-                  >
-                </li>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">@csrf</form>
-                @endguest
-              </ul>
-            </div>
-          </div>
+                >{{ __("Logout") }}</a
+              >
+            </li>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">@csrf</form>
+            @endguest
+          </ul>
+        </div>
+      </div>
     </nav>
     <!-- Jumbotron-->
     <header class="jumbotron jumbotron-fluid text-dark text-center">
