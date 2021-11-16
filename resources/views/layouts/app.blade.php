@@ -20,9 +20,7 @@
 
   <body id="page-top">
     <!-- Navigation-->
-    <nav class="navbar mt-0 navbar-expand-lg bg-dark text-uppercase" id="mainNav">
-      <div class="container">
-        <div class="row">
+    <nav class="navbar mt-0 navbar-expand-lg bg-dark text-uppercase justify-content-start" id="mainNav">
           <div class="col-8 container">
             <div class="row">
               <a class="navbar-brand col-2 js-scroll-trigger" href="{{ route('home.index') }}">{{ __("home.home") }}</a>
@@ -80,7 +78,7 @@
               </div>
             </div>
           </div>
-          <div class="col-4">
+          <div class="col-4 justify-self-end">
             <div class="collapse navbar-collapse" id="navbarResponsive">
               <ul class="navbar-nav ml-auto">
                 @guest
@@ -124,11 +122,9 @@
               </ul>
             </div>
           </div>
-        </div>
-      </div>
     </nav>
     <!-- Jumbotron-->
-    <header class="jumbotron jumbotron-fluid bg-ligth text-dark text-center">
+    <header class="jumbotron jumbotron-fluid text-dark text-center">
       <div class="container d-flex align-items-center flex-column">
         <!-- Jumbotron Heading-->
         <h1 class="masthead-heading text-uppercase mb-0">@yield('user','Guest')</h1>

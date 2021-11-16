@@ -93,4 +93,17 @@
     </div>
   </div>
 </div>
+<div class="row mb-5">
+    @foreach ($handbagsArrayData as $handbag)
+        <div class="col-4">
+          <ul class="list-group">
+            <li class="list-group-item">{{ $handbag['name'] }}</li>
+            <li class="list-group-item">{{ $handbag['price'] }}</li>
+            <li class="list-group-item">{{ $handbag['style'] }}</li>
+            <li class="list-group-item">{{ $handbag['color'] }}</li>
+            <li class="list-group-item">{{ $pokemonArrayDatagit }}</li>
+          </ul>
+        </div>
+    @endforeach
+</div>
 @if (auth()->user()) @section('user', auth()->user()->getName(),) @endif @endsection
