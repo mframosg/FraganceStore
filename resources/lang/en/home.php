@@ -3,6 +3,7 @@
 return [
   /* Index view */
   "List" => "Available fragances",
+  "add" => "Add",
   /* Info view */
   "Reviews" => "Your reviews",
   "Windows" => "Close Windows",

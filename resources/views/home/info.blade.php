@@ -39,13 +39,13 @@
                   @if (is_null($item))
                   <form action="{{ route('item.delete', $fragance->getId()) }}" method="post" class="row col-13">
                     @csrf
-                    <button type="submit" class="btn btn-outline-primary btn-block col-8 mt-2">Add<i class="fa fas fa-shopping-cart"></i></button>
+                    <button type="submit" class="btn btn-outline-primary btn-block col-8 mt-2">{{ __(home.add) }}<i class="fa fas fa-shopping-cart"></i></button>
                     <input type="number" class="btn btn-outline-primary btn-block col-4" name="quantity" value="1" min="1" max="99" />
                   </form>
                   @else
                   <form action="{{ route('item.delete', $fragance->getId()) }}" method="POST">
                     @csrf @method('DELETE')
-                    <button type="submit" class="btn btn-outline-primary btn-block col-15 mt-2">Delete<i class="fa fas fa-shopping-cart"></i></button>
+                    <button type="submit" class="btn btn-outline-primary btn-block col-15 mt-2">{{ __(home.delete) }}<i class="fa fas fa-shopping-cart"></i></button>
                   </form>
                   @endif
                 </div>
