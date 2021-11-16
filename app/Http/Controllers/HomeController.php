@@ -36,14 +36,20 @@ class HomeController extends Controller
     $fragance = Fragance::findOrFail($id);
     $reviews = Review::where("fragance_id", $id)->get();
 
-      
-    $handbags = Http::get("http://35.225.51.133/public/api/handbags");
-    $handbagsArray = $handbags->json();
-    $handbagsArrayData = $handbagsArray["data"];
+    $handbagsArrayData = null;
+
+    try{
+      $handbags = Http::timeout(3)->get("http://35.225.51.133/public/api/handbags");
+      $handbagsArray = $handbags->json();
+      $handbagsArrayData = $handbagsArray["data"];
+    }catch (\Exception $e){
+      $handbagsArrayData = [];
+    }
 
     $pokemon = Http::get("https://pokeapi.co/api/v2/pokemon/");
     $pokemonArray = $pokemon->json();
     $pokemonArrayData = $pokemonArray["results"][rand(0, count($pokemonArray["results"]) - 1)]["name"];
+    
 
     if(!auth()->guest()){
     $wishlist = WishList::where(
@@ -66,6 +72,7 @@ class HomeController extends Controller
     }
 
     return view("home.info", compact("handbagsArrayData", "pokemonArrayData") )
+    // return view("home.info", compact("pokemonArrayData") )
       ->with("fragance", $fragance)
       ->with("reviews", $reviews)
       ->with("wishlist", $wishlist)
