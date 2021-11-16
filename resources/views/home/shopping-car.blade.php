@@ -41,4 +41,5 @@
 </form>
 <br />
 <br />
+<a href="{{ route('order.pdf', 1) }}">Generar PDF</a>
 @endsection
