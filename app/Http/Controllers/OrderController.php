@@ -55,6 +55,6 @@ class OrderController extends Controller
       ->sum("subTotal");
 
     return PDF::loadView('home.pdf', compact('items', 'fragances', 'total'))
-      ->download('archivo.pdf');
+      ->download('item.pdf');
   }
 }
