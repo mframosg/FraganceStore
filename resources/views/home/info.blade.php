@@ -10,7 +10,7 @@
 
                 @if (is_null($wishlist))
                     <a href="{{ route('wishlist.add', $fragance->getId()) }}"
-                        class="btn btn-outline-success btn-block mt-2 col-12">Add Wish <i class="fa far fas fa-heart"></i></a>
+                        class="btn btn-outline-success btn-block mt-2 col-12">{{ __("home.add-wish") }} <i class="fa far fas fa-heart"></i></a>
                 @else
                     <form action="{{ route('wishlist.delete', $fragance->getId()) }}" method="POST">
                         @csrf @method('DELETE')
@@ -73,7 +73,7 @@
       </div>
 
         @if ($handbagsArrayData == [])
-            <div class=" mt-5 list-group-item text-center text-uppercase m-5">Api is not working</div>
+            <div class=" mt-5 list-group-item text-center text-uppercase m-5">{{ __("home.api-notw") }}/div>
         @else
             <div class=" mt-5 row mb-5">
                 @foreach ($handbagsArrayData as $handbag)
