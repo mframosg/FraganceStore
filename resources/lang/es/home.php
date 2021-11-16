@@ -56,4 +56,7 @@ return [
   "fragances" => "Fragancias",
   //*sold view*//
   "sold-fragances" => "Fragancias Vendidas",
+   //API UPDATE
+   "api-notw"=>"La Api no esta funcionando",
+   "pdf"=>"Generar PDF",
 ];
