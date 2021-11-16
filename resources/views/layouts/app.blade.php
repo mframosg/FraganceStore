@@ -16,6 +16,7 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="{{ asset('/css/styles.css') }}" rel="stylesheet" />
     <link href="{{ asset('/css/custom-styles.css') }}" rel="stylesheet" />
+    
   </head>
 
   <body id="page-top">
