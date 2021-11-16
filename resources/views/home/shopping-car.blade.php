@@ -24,7 +24,7 @@
         {{ __("home.delete") }}<i class="fa fas fa-shopping-cart"></i>
       </button>
     </form>
-    <a  class="btn btn-outline-dark btn-block mt-2" href="{{ route('order.pdf', 1) }}">{{ __("home.pdf") }}</a>
+    
   </div>
 
   @endif @endforeach @endforeach
@@ -41,5 +41,6 @@
   </select>
 </form>
 <br />
+<a  class="btn btn-outline-dark btn-block mt-2" href="{{ route('order.pdf', 1) }}">{{ __("home.pdf") }}</a>
 <br />
 @endsection
